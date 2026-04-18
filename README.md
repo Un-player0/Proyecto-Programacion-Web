@@ -1,2 +1,5 @@
-# Proyecto-Programaci-n-Web
-Proyecto web del curso de programacion web
+# Proyecto-Programacion-Web
+Proyecto web del curso de programación web
+- HTML
+- CSS
+- JavaScript
