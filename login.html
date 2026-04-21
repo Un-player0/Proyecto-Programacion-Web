@@ -1,0 +1,145 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Black Angus House | Carnes y Parrilla</title>
+</head>
+
+<body>
+  <!-- ENCABEZADO -->
+  <header>
+      <nav>
+          <a href="index.html"><img src="images/logo.png" alt="Black Angus Logo" height="70"/></a>
+          <a href="menu.html">Menu</a>
+          <a href="locales.html">Locales</a>
+          <a href="reservar.html">Realizar una reserva</a>
+          <a href="nosotros.html">Acerca de nosotros</a>
+          <a href="login.html">Ingresar</a>
+      </nav>
+      <hr/>
+  </header>
+
+    <!-- CONTENIDO PRINCIPAL -->
+  <main>
+ 
+ 
+    <!-- LOGIN -->
+    <section id="form-login">
+      <h2>Iniciar sesión</h2>
+      <form>
+ 
+        <label for="login-email">Correo electrónico</label>
+        <input
+          type="email"
+          id="login-email"
+          name="email"
+          placeholder="correo@ejemplo.com"
+          required
+        />
+        <br/>
+
+        <label for="login-password">Contraseña</label>
+        <input
+          type="password"
+          id="login-password"
+          name="password"
+          placeholder="Tu contraseña"
+          required
+        />
+        <br/>
+ 
+        <a href="#recuperar">¿Olvidaste tu contraseña?</a>
+        <br/> <br/>
+
+        <button type="submit">Ingresar</button>
+ 
+      </form>
+    </section>
+
+    <br/> <hr/>
+ 
+    <!-- SIGNUP -->
+    <section id="form-signup">
+      <h2>Crear cuenta</h2>
+      <form>
+ 
+        <label for="signup-name">Nombre completo</label>
+        <input
+          type="text"
+          id="signup-name"
+          name="name"
+          placeholder="Juan Pérez"
+          required
+        />
+        <br/>
+ 
+        <label for="signup-email">Correo electrónico</label>
+        <input
+          type="email"
+          id="signup-email"
+          name="email"
+          placeholder="correo@ejemplo.com"
+          required
+        />
+        <br/>
+ 
+        <label for="signup-phone">Teléfono (opcional)</label>
+        <input
+          type="tel"
+          id="signup-phone"
+          name="phone"
+          placeholder="+51 999 999 999"
+        />
+        <br/>
+ 
+        <label for="signup-password">Contraseña</label>
+        <input
+          type="password"
+          id="signup-password"
+          name="password"
+          placeholder="Mínimo 8 caracteres"
+          minlength="8"
+          required
+        />
+        <br/>
+ 
+        <label for="signup-confirm">Confirmar contraseña</label>
+        <input
+          type="password"
+          id="signup-confirm"
+          name="confirm"
+          placeholder="Repite tu contraseña"
+          minlength="8"
+          maxlength="16"
+          required
+        />
+        <br/> <br/>
+ 
+        <label>
+          <input type="checkbox" name="terms" required />
+          Acepto los <a href="#terminos">términos y condiciones</a>
+        </label>
+        <br/> <br/>
+
+        <button type="submit">Crear cuenta</button>
+ 
+      </form>
+    </section>
+    <br/>
+    
+  </main>
+
+
+    <!-- PIE DE PÁGINA -->
+    <footer>
+        <hr/>
+        <ul>
+            <li><a href="nosotros.html">Acerca de nosotros</a></li>
+            <li><a href="nosotros.html#contacto">Contáctanos</a></li>
+            <li><a href="https://forms.gle/2TB8Co67aePxxZjV9" target="_blank"><img src="images/complain_book.png" alt="Libro de reclamaciones" width="80px"/></a></li>
+        </ul>
+        <p>© 2026 Black Angus House - Todos los derechos reservados</p>
+    </footer>
+</body>
+</html>

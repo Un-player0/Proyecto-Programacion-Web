@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Black Angus House | Carnes y Parrilla</title>
+</head>
+
+<body>
+  <!-- ENCABEZADO -->
+  <header>
+      <nav>
+          <a href="index.html"><img src="images/logo.png" alt="Black Angus Logo" height="70"/></a>
+          <a href="menu.html">Menu</a>
+          <a href="locales.html">Locales</a>
+          <a href="reservar.html">Realizar una reserva</a>
+          <a href="nosotros.html">Acerca de nosotros</a>
+          <a href="login.html">Ingresar</a>
+      </nav>
+      <hr/>
+  </header>
+
+    <!-- CONTENIDO PRINCIPAL -->
+    <main>
+        <div id="reservas">
+        <h2> RESERVAS </h2>
+            <div id="reservas-form">
+                <div id="reservas-form-local">
+                    <label for="cars">Escoge un local:</label>
+
+                    <select name="cars" id="cars">
+                        <option value="miraflores">Miraflores</option>
+                        <option value="sanisidro">San Isidro</option>
+                        <option value="surco">Surco</option>
+                        <option value="jockeyplaza">Jockey Plaza</option>
+                    </select>
+                </div>
+                <br/>
+
+                <div id="reservas-form-fecha">
+                    <label for="fecha">Fecha de reserva:</label>
+                    <input type="date" id="fecha" name="fecha" value=""/>
+                </div>
+                <br/>
+
+                <div id="reservas-form-hora">
+                    <label for="hora">Hora de reserva:</label>
+                    <input type="time" id="hora" name="hora" min="8:00" max="22:00"/>
+                </div>
+                <br/>
+                
+                <div id="reservas-form-personas">
+                    <label for="personas">Número de personas:</label>
+                    <input type="number" id="personas" name="personas" value="1" min="1" max="20"/>
+                </div>
+                <br/>
+                <button id="reservas-form-submit">Realizar Reserva</button>
+
+            </div>
+        </div>
+
+
+    </main>
+
+    <!-- PIE DE PÁGINA -->
+    <footer>
+        <hr/>
+        <ul>
+            <li><a href="nosotros.html">Acerca de nosotros</a></li>
+            <li><a href="nosotros.html#contacto">Contáctanos</a></li>
+            <li><a href="https://forms.gle/2TB8Co67aePxxZjV9" target="_blank"><img src="images/complain_book.png" alt="Libro de reclamaciones" width="80px"/></a></li>
+        </ul>
+        <p>© 2026 Black Angus House - Todos los derechos reservados</p>
+    </footer>
+</body>
+</html>
