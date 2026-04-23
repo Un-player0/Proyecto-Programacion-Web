@@ -1,0 +1,1313 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Black Angus House — Restaurante de Carnes</title>
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,700;0,900;1,400;1,700&family=Cormorant+Garamond:ital,wght@0,300;0,400;0,600;1,300;1,400&family=Bebas+Neue&display=swap" rel="stylesheet">
+<style>
+  :root {
+    --black: #0a0705;
+    --deep: #110d0a;
+    --charcoal: #1c1410;
+    --ember: #c0392b;
+    --gold: #c9933a;
+    --gold-light: #e8b96a;
+    --cream: #f5ede0;
+    --warm-white: #fdf8f2;
+    --text-muted: #8a7060;
+  }
+
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+
+  html { scroll-behavior: smooth; }
+
+  body {
+    background: var(--black);
+    color: var(--cream);
+    font-family: 'Cormorant Garamond', serif;
+    overflow-x: hidden;
+    cursor: none;
+  }
+
+  /* Custom cursor */
+  .cursor {
+    position: fixed;
+    width: 12px; height: 12px;
+    background: var(--gold);
+    border-radius: 50%;
+    pointer-events: none;
+    z-index: 9999;
+    transition: transform 0.15s ease;
+    mix-blend-mode: difference;
+  }
+  .cursor-ring {
+    position: fixed;
+    width: 36px; height: 36px;
+    border: 1px solid var(--gold);
+    border-radius: 50%;
+    pointer-events: none;
+    z-index: 9998;
+    transition: all 0.3s ease;
+    opacity: 0.5;
+  }
+
+  /* ── NAV ── */
+  nav {
+    position: fixed; top: 0; left: 0; right: 0;
+    z-index: 100;
+    display: flex; align-items: center; justify-content: space-between;
+    padding: 24px 60px;
+    background: linear-gradient(to bottom, rgba(10,7,5,0.95), transparent);
+  }
+  .nav-logo {
+    font-family: 'Bebas Neue', cursive;
+    font-size: 1.6rem;
+    letter-spacing: 4px;
+    color: var(--gold);
+    text-decoration: none;
+  }
+  .nav-logo span { color: var(--cream); }
+  .nav-links { display: flex; gap: 40px; list-style: none; }
+  .nav-links a {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 0.85rem;
+    letter-spacing: 3px;
+    text-transform: uppercase;
+    color: var(--cream);
+    text-decoration: none;
+    opacity: 0.75;
+    transition: opacity 0.3s, color 0.3s;
+  }
+  .nav-links a:hover { opacity: 1; color: var(--gold); }
+  .nav-reserve {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 0.8rem;
+    letter-spacing: 3px;
+    text-transform: uppercase;
+    color: var(--black);
+    background: var(--gold);
+    padding: 10px 24px;
+    text-decoration: none;
+    transition: background 0.3s, transform 0.2s;
+  }
+  .nav-reserve:hover { background: var(--gold-light); transform: translateY(-1px); }
+
+  /* ── HERO ── */
+  .hero {
+    position: relative;
+    height: 100vh;
+    display: flex; align-items: center; justify-content: center;
+    overflow: hidden;
+  }
+  .hero-bg {
+    position: absolute; inset: 0;
+    background:
+      radial-gradient(ellipse at 30% 60%, rgba(192,57,43,0.12) 0%, transparent 60%),
+      radial-gradient(ellipse at 80% 30%, rgba(201,147,58,0.08) 0%, transparent 50%),
+      linear-gradient(160deg, #0a0705 0%, #1c1410 50%, #0f0a07 100%);
+  }
+  /* Animated ember particles */
+  .embers {
+    position: absolute; inset: 0; overflow: hidden;
+  }
+  .ember {
+    position: absolute;
+    width: 2px; height: 2px;
+    background: var(--gold);
+    border-radius: 50%;
+    animation: float-up linear infinite;
+    opacity: 0;
+  }
+  @keyframes float-up {
+    0% { transform: translateY(100vh) translateX(0); opacity: 0; }
+    10% { opacity: 0.8; }
+    90% { opacity: 0.3; }
+    100% { transform: translateY(-20px) translateX(30px); opacity: 0; }
+  }
+
+  .hero-content {
+    position: relative; z-index: 2;
+    text-align: center;
+    animation: hero-in 1.4s ease forwards;
+  }
+  @keyframes hero-in {
+    from { opacity: 0; transform: translateY(40px); }
+    to { opacity: 1; transform: translateY(0); }
+  }
+  .hero-eyebrow {
+    font-size: 0.75rem;
+    letter-spacing: 8px;
+    text-transform: uppercase;
+    color: var(--gold);
+    margin-bottom: 28px;
+    opacity: 0;
+    animation: fade-in 1s ease 0.4s forwards;
+  }
+  @keyframes fade-in {
+    to { opacity: 1; }
+  }
+  .hero-title {
+    font-family: 'Playfair Display', serif;
+    font-size: clamp(4rem, 10vw, 9rem);
+    font-weight: 900;
+    line-height: 0.9;
+    letter-spacing: -2px;
+    color: var(--warm-white);
+    opacity: 0;
+    animation: fade-in 1s ease 0.6s forwards;
+  }
+  .hero-title em {
+    font-style: italic;
+    color: var(--gold);
+    display: block;
+  }
+  .hero-sub {
+    font-size: clamp(1rem, 2vw, 1.4rem);
+    font-style: italic;
+    color: var(--text-muted);
+    margin-top: 20px;
+    letter-spacing: 1px;
+    opacity: 0;
+    animation: fade-in 1s ease 0.9s forwards;
+  }
+  .hero-divider {
+    display: flex; align-items: center; justify-content: center; gap: 16px;
+    margin: 40px 0;
+    opacity: 0;
+    animation: fade-in 1s ease 1.1s forwards;
+  }
+  .hero-divider::before, .hero-divider::after {
+    content: ''; display: block;
+    width: 80px; height: 1px;
+    background: linear-gradient(to right, transparent, var(--gold));
+  }
+  .hero-divider::after { background: linear-gradient(to left, transparent, var(--gold)); }
+  .hero-divider-icon { color: var(--gold); font-size: 1.2rem; }
+  .hero-cta {
+    display: inline-flex; gap: 20px;
+    opacity: 0;
+    animation: fade-in 1s ease 1.3s forwards;
+  }
+  .btn-primary {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 0.85rem;
+    letter-spacing: 3px;
+    text-transform: uppercase;
+    color: var(--black);
+    background: var(--gold);
+    padding: 16px 40px;
+    text-decoration: none;
+    transition: all 0.3s;
+    position: relative;
+    overflow: hidden;
+  }
+  .btn-primary::after {
+    content: ''; position: absolute; inset: 0;
+    background: var(--gold-light);
+    transform: scaleX(0); transform-origin: left;
+    transition: transform 0.3s ease;
+  }
+  .btn-primary:hover::after { transform: scaleX(1); }
+  .btn-primary span { position: relative; z-index: 1; }
+  .btn-secondary {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 0.85rem;
+    letter-spacing: 3px;
+    text-transform: uppercase;
+    color: var(--gold);
+    border: 1px solid var(--gold);
+    padding: 16px 40px;
+    text-decoration: none;
+    transition: all 0.3s;
+  }
+  .btn-secondary:hover { background: rgba(201,147,58,0.1); }
+
+  .hero-scroll {
+    position: absolute; bottom: 40px; left: 50%; transform: translateX(-50%);
+    display: flex; flex-direction: column; align-items: center; gap: 8px;
+    color: var(--text-muted);
+    font-size: 0.7rem; letter-spacing: 3px; text-transform: uppercase;
+    opacity: 0;
+    animation: fade-in 1s ease 2s forwards;
+  }
+  .scroll-line {
+    width: 1px; height: 50px;
+    background: linear-gradient(to bottom, var(--gold), transparent);
+    animation: scroll-pulse 2s ease-in-out infinite;
+  }
+  @keyframes scroll-pulse {
+    0%, 100% { opacity: 0.4; }
+    50% { opacity: 1; }
+  }
+
+  /* ── STRIP ── */
+  .strip {
+    background: var(--gold);
+    padding: 14px 0;
+    overflow: hidden;
+  }
+  .strip-inner {
+    display: flex; gap: 60px;
+    animation: marquee 20s linear infinite;
+    white-space: nowrap;
+  }
+  @keyframes marquee {
+    from { transform: translateX(0); }
+    to { transform: translateX(-50%); }
+  }
+  .strip-item {
+    font-family: 'Bebas Neue', cursive;
+    font-size: 0.9rem;
+    letter-spacing: 4px;
+    color: var(--black);
+    display: flex; align-items: center; gap: 20px;
+  }
+  .strip-dot { width: 4px; height: 4px; background: var(--black); border-radius: 50%; }
+
+  /* ── SECTIONS ── */
+  section { padding: 120px 60px; }
+
+  .section-label {
+    font-size: 0.7rem;
+    letter-spacing: 6px;
+    text-transform: uppercase;
+    color: var(--gold);
+    margin-bottom: 16px;
+  }
+  .section-title {
+    font-family: 'Playfair Display', serif;
+    font-size: clamp(2.5rem, 5vw, 4.5rem);
+    font-weight: 700;
+    line-height: 1.05;
+    color: var(--warm-white);
+  }
+  .section-title em {
+    font-style: italic;
+    color: var(--gold);
+  }
+
+  /* ── ABOUT ── */
+  .about {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 100px;
+    align-items: center;
+    max-width: 1300px;
+    margin: 0 auto;
+  }
+  .about-image-wrap {
+    position: relative;
+  }
+  .about-image {
+    width: 100%;
+    aspect-ratio: 3/4;
+    background:
+      radial-gradient(ellipse at center, rgba(192,57,43,0.3) 0%, transparent 70%),
+      linear-gradient(135deg, #2a1a0e 0%, #1a0f08 100%);
+    position: relative;
+    overflow: hidden;
+    display: flex; align-items: center; justify-content: center;
+  }
+  .about-image-inner {
+    font-size: 8rem;
+    opacity: 0.15;
+    filter: sepia(1);
+  }
+  .about-image::before {
+    content: '';
+    position: absolute;
+    top: -20px; left: -20px; right: -20px; bottom: -20px;
+    border: 1px solid rgba(201,147,58,0.2);
+    transform: rotate(2deg);
+  }
+  .about-badge {
+    position: absolute;
+    bottom: -30px; right: -30px;
+    width: 120px; height: 120px;
+    background: var(--ember);
+    border-radius: 50%;
+    display: flex; flex-direction: column; align-items: center; justify-content: center;
+    border: 3px solid var(--gold);
+  }
+  .about-badge-num {
+    font-family: 'Bebas Neue', cursive;
+    font-size: 2.5rem;
+    color: var(--cream);
+    line-height: 1;
+  }
+  .about-badge-text {
+    font-size: 0.55rem;
+    letter-spacing: 2px;
+    text-transform: uppercase;
+    color: rgba(245,237,224,0.8);
+    text-align: center;
+  }
+  .about-text p {
+    font-size: 1.15rem;
+    line-height: 1.9;
+    color: rgba(245,237,224,0.75);
+    margin-top: 32px;
+  }
+  .about-text p + p { margin-top: 20px; }
+  .about-stats {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 20px;
+    margin-top: 50px;
+    padding-top: 50px;
+    border-top: 1px solid rgba(201,147,58,0.2);
+  }
+  .stat-num {
+    font-family: 'Playfair Display', serif;
+    font-size: 2.5rem;
+    font-weight: 700;
+    color: var(--gold);
+    line-height: 1;
+  }
+  .stat-label {
+    font-size: 0.75rem;
+    letter-spacing: 2px;
+    text-transform: uppercase;
+    color: var(--text-muted);
+    margin-top: 6px;
+  }
+
+  /* ── MENU ── */
+  .menu-section {
+    background: var(--deep);
+    position: relative;
+    overflow: hidden;
+  }
+  .menu-section::before {
+    content: 'MENU';
+    position: absolute;
+    font-family: 'Bebas Neue', cursive;
+    font-size: 30vw;
+    color: rgba(201,147,58,0.03);
+    top: 50%; left: 50%;
+    transform: translate(-50%, -50%);
+    pointer-events: none;
+    white-space: nowrap;
+  }
+  .menu-inner { max-width: 1300px; margin: 0 auto; position: relative; }
+  .menu-header {
+    display: flex; justify-content: space-between; align-items: flex-end;
+    margin-bottom: 70px;
+  }
+  .menu-tabs {
+    display: flex; gap: 4px;
+    background: rgba(255,255,255,0.04);
+    padding: 4px;
+    border-radius: 2px;
+  }
+  .menu-tab {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 0.8rem;
+    letter-spacing: 2px;
+    text-transform: uppercase;
+    color: var(--text-muted);
+    background: none;
+    border: none;
+    padding: 10px 24px;
+    cursor: none;
+    transition: all 0.3s;
+  }
+  .menu-tab.active {
+    background: var(--gold);
+    color: var(--black);
+  }
+  .menu-tab:hover:not(.active) { color: var(--cream); }
+  .menu-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 2px;
+  }
+  .menu-card {
+    background: var(--charcoal);
+    padding: 40px 36px;
+    position: relative;
+    overflow: hidden;
+    transition: transform 0.3s, background 0.3s;
+    cursor: none;
+  }
+  .menu-card:hover {
+    background: #231810;
+    transform: translateY(-4px);
+  }
+  .menu-card::after {
+    content: '';
+    position: absolute;
+    bottom: 0; left: 0; right: 0;
+    height: 2px;
+    background: linear-gradient(to right, var(--ember), var(--gold));
+    transform: scaleX(0);
+    transform-origin: left;
+    transition: transform 0.4s ease;
+  }
+  .menu-card:hover::after { transform: scaleX(1); }
+  .card-tag {
+    font-size: 0.65rem;
+    letter-spacing: 3px;
+    text-transform: uppercase;
+    color: var(--ember);
+    margin-bottom: 12px;
+  }
+  .card-name {
+    font-family: 'Playfair Display', serif;
+    font-size: 1.5rem;
+    font-weight: 700;
+    color: var(--warm-white);
+    line-height: 1.2;
+    margin-bottom: 12px;
+  }
+  .card-desc {
+    font-size: 0.9rem;
+    line-height: 1.7;
+    color: var(--text-muted);
+    margin-bottom: 28px;
+  }
+  .card-footer {
+    display: flex; justify-content: space-between; align-items: center;
+  }
+  .card-price {
+    font-family: 'Playfair Display', serif;
+    font-size: 1.6rem;
+    font-weight: 700;
+    color: var(--gold);
+  }
+  .card-price span {
+    font-size: 0.8rem;
+    color: var(--text-muted);
+    font-family: 'Cormorant Garamond', serif;
+  }
+  .card-weight {
+    font-size: 0.75rem;
+    letter-spacing: 2px;
+    color: var(--text-muted);
+    text-transform: uppercase;
+    border: 1px solid rgba(201,147,58,0.3);
+    padding: 4px 12px;
+  }
+
+  /* ── EXPERIENCE ── */
+  .experience {
+    max-width: 1300px;
+    margin: 0 auto;
+  }
+  .exp-grid {
+    display: grid;
+    grid-template-columns: 1fr 2fr;
+    gap: 80px;
+    margin-top: 70px;
+    align-items: start;
+  }
+  .exp-features { display: flex; flex-direction: column; gap: 0; }
+  .exp-feature {
+    padding: 30px 0;
+    border-bottom: 1px solid rgba(201,147,58,0.1);
+    display: flex; gap: 24px; align-items: flex-start;
+    transition: padding-left 0.3s;
+    cursor: none;
+  }
+  .exp-feature:hover { padding-left: 12px; }
+  .exp-feature:first-child { border-top: 1px solid rgba(201,147,58,0.1); }
+  .exp-icon {
+    font-size: 1.8rem;
+    line-height: 1;
+    flex-shrink: 0;
+    width: 50px; text-align: center;
+  }
+  .exp-feature-title {
+    font-family: 'Playfair Display', serif;
+    font-size: 1.1rem;
+    font-weight: 600;
+    color: var(--cream);
+    margin-bottom: 6px;
+  }
+  .exp-feature-desc {
+    font-size: 0.9rem;
+    line-height: 1.7;
+    color: var(--text-muted);
+  }
+  .exp-showcase {
+    display: grid;
+    grid-template-rows: 1fr 1fr;
+    gap: 2px;
+    height: 600px;
+  }
+  .exp-box {
+    background: var(--charcoal);
+    position: relative;
+    overflow: hidden;
+    display: flex; align-items: flex-end;
+    padding: 36px;
+  }
+  .exp-box:first-child {
+    background: linear-gradient(135deg, #2a1208 0%, #1a0c05 100%);
+  }
+  .exp-box::before {
+    content: attr(data-icon);
+    position: absolute;
+    font-size: 10rem;
+    right: -10px; top: -10px;
+    opacity: 0.07;
+    line-height: 1;
+  }
+  .exp-box-content {}
+  .exp-box-label {
+    font-size: 0.7rem;
+    letter-spacing: 4px;
+    text-transform: uppercase;
+    color: var(--gold);
+    margin-bottom: 8px;
+  }
+  .exp-box-title {
+    font-family: 'Playfair Display', serif;
+    font-size: 1.8rem;
+    font-weight: 700;
+    color: var(--warm-white);
+    line-height: 1.1;
+  }
+
+  /* ── RESERVATION ── */
+  .reservation-section {
+    background: var(--charcoal);
+    position: relative;
+    overflow: hidden;
+  }
+  .reservation-section::before {
+    content: '';
+    position: absolute; inset: 0;
+    background:
+      radial-gradient(ellipse at 20% 50%, rgba(192,57,43,0.08) 0%, transparent 60%),
+      radial-gradient(ellipse at 80% 50%, rgba(201,147,58,0.06) 0%, transparent 60%);
+  }
+  .reservation-inner {
+    max-width: 900px;
+    margin: 0 auto;
+    text-align: center;
+    position: relative;
+  }
+  .reservation-form {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 16px;
+    margin-top: 60px;
+  }
+  .form-group {
+    display: flex; flex-direction: column; gap: 8px;
+  }
+  .form-group.full { grid-column: 1 / -1; }
+  .form-label {
+    font-size: 0.7rem;
+    letter-spacing: 3px;
+    text-transform: uppercase;
+    color: var(--text-muted);
+  }
+  .form-input, .form-select {
+    background: rgba(255,255,255,0.04);
+    border: 1px solid rgba(201,147,58,0.2);
+    color: var(--cream);
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 1rem;
+    padding: 16px 20px;
+    outline: none;
+    transition: border-color 0.3s;
+    appearance: none;
+    -webkit-appearance: none;
+  }
+  .form-input:focus, .form-select:focus {
+    border-color: var(--gold);
+    background: rgba(201,147,58,0.06);
+  }
+  .form-input::placeholder { color: rgba(138,112,96,0.6); }
+  .form-select option { background: var(--charcoal); }
+  .form-btn {
+    grid-column: 1 / -1;
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 0.9rem;
+    letter-spacing: 4px;
+    text-transform: uppercase;
+    color: var(--black);
+    background: var(--gold);
+    border: none;
+    padding: 20px;
+    cursor: none;
+    transition: background 0.3s, transform 0.2s;
+    margin-top: 10px;
+  }
+  .form-btn:hover { background: var(--gold-light); transform: translateY(-2px); }
+
+  /* ── TESTIMONIALS ── */
+  .testimonials-section {
+    max-width: 1300px;
+    margin: 0 auto;
+  }
+  .testimonials-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 24px;
+    margin-top: 70px;
+  }
+  .testimonial-card {
+    background: var(--charcoal);
+    padding: 40px;
+    position: relative;
+    border-top: 2px solid var(--gold);
+  }
+  .testimonial-quote {
+    font-size: 3rem;
+    color: var(--gold);
+    opacity: 0.3;
+    font-family: 'Playfair Display', serif;
+    line-height: 0.8;
+    margin-bottom: 20px;
+  }
+  .testimonial-text {
+    font-size: 1rem;
+    font-style: italic;
+    line-height: 1.8;
+    color: rgba(245,237,224,0.75);
+    margin-bottom: 28px;
+  }
+  .testimonial-author {
+    font-size: 0.75rem;
+    letter-spacing: 3px;
+    text-transform: uppercase;
+    color: var(--gold);
+  }
+  .testimonial-role {
+    font-size: 0.8rem;
+    color: var(--text-muted);
+    margin-top: 4px;
+  }
+  .stars { color: var(--gold); font-size: 0.9rem; margin-bottom: 20px; }
+
+  /* ── FOOTER ── */
+  footer {
+    background: var(--deep);
+    border-top: 1px solid rgba(201,147,58,0.1);
+    padding: 80px 60px 40px;
+  }
+  .footer-top {
+    display: grid;
+    grid-template-columns: 2fr 1fr 1fr 1fr;
+    gap: 60px;
+    margin-bottom: 60px;
+  }
+  .footer-brand {}
+  .footer-logo {
+    font-family: 'Bebas Neue', cursive;
+    font-size: 2rem;
+    letter-spacing: 4px;
+    color: var(--gold);
+    margin-bottom: 20px;
+  }
+  .footer-logo span { color: var(--cream); }
+  .footer-tagline {
+    font-style: italic;
+    font-size: 1rem;
+    color: var(--text-muted);
+    line-height: 1.7;
+  }
+  .footer-col-title {
+    font-size: 0.7rem;
+    letter-spacing: 4px;
+    text-transform: uppercase;
+    color: var(--gold);
+    margin-bottom: 24px;
+  }
+  .footer-links { list-style: none; display: flex; flex-direction: column; gap: 12px; }
+  .footer-links a {
+    font-size: 0.95rem;
+    color: var(--text-muted);
+    text-decoration: none;
+    transition: color 0.3s;
+  }
+  .footer-links a:hover { color: var(--cream); }
+  .footer-contact-item {
+    display: flex; gap: 12px;
+    font-size: 0.9rem;
+    color: var(--text-muted);
+    margin-bottom: 16px;
+    line-height: 1.5;
+  }
+  .footer-bottom {
+    border-top: 1px solid rgba(255,255,255,0.05);
+    padding-top: 30px;
+    display: flex; justify-content: space-between; align-items: center;
+  }
+  .footer-copy {
+    font-size: 0.8rem;
+    color: var(--text-muted);
+    letter-spacing: 1px;
+  }
+  .footer-social { display: flex; gap: 20px; }
+  .social-link {
+    width: 36px; height: 36px;
+    border: 1px solid rgba(201,147,58,0.3);
+    display: flex; align-items: center; justify-content: center;
+    text-decoration: none;
+    color: var(--text-muted);
+    font-size: 0.85rem;
+    transition: all 0.3s;
+  }
+  .social-link:hover {
+    border-color: var(--gold);
+    color: var(--gold);
+    background: rgba(201,147,58,0.08);
+  }
+
+  /* Scrolled nav */
+  nav.scrolled {
+    background: rgba(10,7,5,0.97);
+    backdrop-filter: blur(10px);
+    padding-top: 14px; padding-bottom: 14px;
+    border-bottom: 1px solid rgba(201,147,58,0.1);
+    transition: all 0.4s;
+  }
+
+  /* Scroll reveal */
+  .reveal {
+    opacity: 0;
+    transform: translateY(30px);
+    transition: opacity 0.8s ease, transform 0.8s ease;
+  }
+  .reveal.visible {
+    opacity: 1;
+    transform: translateY(0);
+  }
+  .reveal-delay-1 { transition-delay: 0.1s; }
+  .reveal-delay-2 { transition-delay: 0.2s; }
+  .reveal-delay-3 { transition-delay: 0.3s; }
+
+  @media (max-width: 900px) {
+    nav { padding: 20px 24px; }
+    .nav-links { display: none; }
+    section { padding: 80px 24px; }
+    .about { grid-template-columns: 1fr; gap: 50px; }
+    .menu-grid { grid-template-columns: 1fr; }
+    .menu-header { flex-direction: column; gap: 20px; align-items: flex-start; }
+    .exp-grid { grid-template-columns: 1fr; }
+    .testimonials-grid { grid-template-columns: 1fr; }
+    .footer-top { grid-template-columns: 1fr 1fr; }
+    .reservation-form { grid-template-columns: 1fr; }
+    body { cursor: auto; }
+    .cursor, .cursor-ring { display: none; }
+  }
+</style>
+</head>
+<body>
+
+<!-- Custom cursor -->
+<div class="cursor" id="cursor"></div>
+<div class="cursor-ring" id="cursorRing"></div>
+
+<!-- NAV -->
+<nav id="nav">
+  <a href="#" class="nav-logo">Black <span>Angus</span> House</a>
+  <ul class="nav-links">
+    <li><a href="#nosotros">Nosotros</a></li>
+    <li><a href="#menu">Carta</a></li>
+    <li><a href="#experiencia">Experiencia</a></li>
+    <li><a href="#reservas">Reservas</a></li>
+  </ul>
+  <a href="#reservas" class="nav-reserve">Reservar Mesa</a>
+</nav>
+
+<!-- HERO -->
+<section class="hero" id="hero">
+  <div class="hero-bg"></div>
+  <div class="embers" id="embers"></div>
+  <div class="hero-content">
+    <p class="hero-eyebrow">Lima, Perú — Desde 2018</p>
+    <h1 class="hero-title">
+      Black<br><em>Angus</em><br>House
+    </h1>
+    <p class="hero-sub">El arte de la brasa perfecta</p>
+    <div class="hero-divider"><span class="hero-divider-icon">✦</span></div>
+    <div class="hero-cta">
+      <a href="#menu" class="btn-primary"><span>Ver la Carta</span></a>
+      <a href="#reservas" class="btn-secondary">Reservar Mesa</a>
+    </div>
+  </div>
+  <div class="hero-scroll">
+    <div class="scroll-line"></div>
+    <span>Scroll</span>
+  </div>
+</section>
+
+<!-- STRIP -->
+<div class="strip">
+  <div class="strip-inner">
+    <div class="strip-item">Black Angus Premium <span class="strip-dot"></span></div>
+    <div class="strip-item">Cortes al Carbón <span class="strip-dot"></span></div>
+    <div class="strip-item">Lima, Perú <span class="strip-dot"></span></div>
+    <div class="strip-item">Maduración 28 Días <span class="strip-dot"></span></div>
+    <div class="strip-item">Parrilla Artesanal <span class="strip-dot"></span></div>
+    <div class="strip-item">Open desde 12pm <span class="strip-dot"></span></div>
+    <div class="strip-item">Black Angus Premium <span class="strip-dot"></span></div>
+    <div class="strip-item">Cortes al Carbón <span class="strip-dot"></span></div>
+    <div class="strip-item">Lima, Perú <span class="strip-dot"></span></div>
+    <div class="strip-item">Maduración 28 Días <span class="strip-dot"></span></div>
+    <div class="strip-item">Parrilla Artesanal <span class="strip-dot"></span></div>
+    <div class="strip-item">Open desde 12pm <span class="strip-dot"></span></div>
+  </div>
+</div>
+
+<!-- ABOUT -->
+<section id="nosotros">
+  <div class="about">
+    <div class="about-image-wrap reveal">
+      <div class="about-image">
+        <div class="about-image-inner">🥩</div>
+      </div>
+      <div class="about-badge">
+        <div class="about-badge-num">6</div>
+        <div class="about-badge-text">años de<br>excelencia</div>
+      </div>
+    </div>
+    <div class="about-text">
+      <p class="section-label reveal">— Nuestra Historia</p>
+      <h2 class="section-title reveal reveal-delay-1">
+        Donde la carne<br><em>es arte</em>
+      </h2>
+      <p class="reveal reveal-delay-2">
+        En Black Angus House creemos que un gran corte merece respeto: el del ganadero que lo crió, el del tiempo que lo maduró, y el del fuego que lo transforma. Nuestras carnes provienen de los mejores criadores de raza Black Angus, seleccionadas por su marmoleado excepcional.
+      </p>
+      <p class="reveal reveal-delay-3">
+        Cada pieza pasa por un proceso de maduración en seco de 28 días antes de llegar a nuestra parrilla de carbón, donde nuestros maestros parrilleros trabajan con precisión milimétrica para lograr el punto exacto que merece cada corte.
+      </p>
+      <div class="about-stats reveal">
+        <div>
+          <div class="stat-num">28°</div>
+          <div class="stat-label">Días de dry-age</div>
+        </div>
+        <div>
+          <div class="stat-num">12+</div>
+          <div class="stat-label">Cortes exclusivos</div>
+        </div>
+        <div>
+          <div class="stat-num">800°</div>
+          <div class="stat-label">Grados de brasa</div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- MENU -->
+<section class="menu-section" id="menu">
+  <div class="menu-inner">
+    <div class="menu-header reveal">
+      <div>
+        <p class="section-label">— Nuestra Carta</p>
+        <h2 class="section-title">Cortes <em>estelares</em></h2>
+      </div>
+      <div class="menu-tabs">
+        <button class="menu-tab active" onclick="filterMenu('carnes')">Carnes</button>
+        <button class="menu-tab" onclick="filterMenu('entradas')">Entradas</button>
+        <button class="menu-tab" onclick="filterMenu('acompa')">Acompañamientos</button>
+      </div>
+    </div>
+    <div class="menu-grid" id="menuGrid">
+      <!-- CARNES -->
+      <div class="menu-card reveal" data-cat="carnes">
+        <div class="card-tag">★ Signature</div>
+        <div class="card-name">Tomahawk Black Angus</div>
+        <div class="card-desc">Costilla larga con hueso, maduración 28 días en seco. Marmoleado grado Prime. Servido con chimichurri de la casa y mantequilla de hierbas.</div>
+        <div class="card-footer">
+          <div class="card-price">S/. 189 <span>/ unidad</span></div>
+          <div class="card-weight">1.2 kg</div>
+        </div>
+      </div>
+      <div class="menu-card reveal reveal-delay-1" data-cat="carnes">
+        <div class="card-tag">Parrilla</div>
+        <div class="card-name">Ribeye al Carbón</div>
+        <div class="card-desc">El rey de los cortes. Intenso marmoleado natural, cocinado sobre carbón de quebracho blanco. Seleccione su punto de cocción preferido.</div>
+        <div class="card-footer">
+          <div class="card-price">S/. 125 <span>/ porción</span></div>
+          <div class="card-weight">400 g</div>
+        </div>
+      </div>
+      <div class="menu-card reveal reveal-delay-2" data-cat="carnes">
+        <div class="card-tag">Dry-Age</div>
+        <div class="card-name">New York Strip</div>
+        <div class="card-desc">Corte firme y sabroso con borde de grasa crujiente. Madurado 21 días para intensificar su perfil de sabor. Acompañado de papas rústicas y ensalada.</div>
+        <div class="card-footer">
+          <div class="card-price">S/. 98 <span>/ porción</span></div>
+          <div class="card-weight">350 g</div>
+        </div>
+      </div>
+      <div class="menu-card reveal" data-cat="carnes">
+        <div class="card-tag">Chef's Choice</div>
+        <div class="card-name">Picanha a la Brasa</div>
+        <div class="card-desc">Corte brasileño en su mejor versión. Capa de grasa intacta, sazonado solo con sal gruesa patagónica y cocción directa sobre las brasas más vivas.</div>
+        <div class="card-footer">
+          <div class="card-price">S/. 85 <span>/ porción</span></div>
+          <div class="card-weight">300 g</div>
+        </div>
+      </div>
+      <div class="menu-card reveal reveal-delay-1" data-cat="carnes">
+        <div class="card-tag">Especial</div>
+        <div class="card-name">Filete Mignon Trufado</div>
+        <div class="card-desc">El corte más tierno envuelto en tocino ahumado, con reducción de trufa negra y puré de papa ahumada. Una experiencia que trasciende lo ordinario.</div>
+        <div class="card-footer">
+          <div class="card-price">S/. 135 <span>/ porción</span></div>
+          <div class="card-weight">280 g</div>
+        </div>
+      </div>
+      <div class="menu-card reveal reveal-delay-2" data-cat="carnes">
+        <div class="card-tag">Para Compartir</div>
+        <div class="card-name">Parrilla Black Angus</div>
+        <div class="card-desc">Selección de los mejores cortes para dos personas: short rib, picanha, chorizo artesanal y morcilla. Incluye tres acompañamientos y salsas de la casa.</div>
+        <div class="card-footer">
+          <div class="card-price">S/. 240 <span>/ 2 pers.</span></div>
+          <div class="card-weight">1.1 kg</div>
+        </div>
+      </div>
+
+      <!-- ENTRADAS -->
+      <div class="menu-card reveal" data-cat="entradas" style="display:none">
+        <div class="card-tag">Entrada</div>
+        <div class="card-name">Tartar de Res</div>
+        <div class="card-desc">Lomo fino picado a cuchillo, alcaparras, yema de huevo curada, mostaza dijon y tostadas de masa madre. Un clásico revisitado.</div>
+        <div class="card-footer">
+          <div class="card-price">S/. 55</div>
+          <div class="card-weight">180 g</div>
+        </div>
+      </div>
+      <div class="menu-card reveal reveal-delay-1" data-cat="entradas" style="display:none">
+        <div class="card-tag">Entrada</div>
+        <div class="card-name">Carpaccio de Wagyu</div>
+        <div class="card-desc">Finas láminas de wagyu A4, aceite de oliva virgen extra, parmesano 24 meses, rúcula fresca y escamas de sal Maldon.</div>
+        <div class="card-footer">
+          <div class="card-price">S/. 72</div>
+          <div class="card-weight">120 g</div>
+        </div>
+      </div>
+      <div class="menu-card reveal reveal-delay-2" data-cat="entradas" style="display:none">
+        <div class="card-tag">Entrada</div>
+        <div class="card-name">Croquetas de Rabo</div>
+        <div class="card-desc">Rabo de toro cocido 12 horas, empanizado en panko y frito. Servido con alioli de ají amarillo y reducción de vino tinto.</div>
+        <div class="card-footer">
+          <div class="card-price">S/. 45</div>
+          <div class="card-weight">6 unid.</div>
+        </div>
+      </div>
+
+      <!-- ACOMPAÑAMIENTOS -->
+      <div class="menu-card reveal" data-cat="acompa" style="display:none">
+        <div class="card-tag">Acompañamiento</div>
+        <div class="card-name">Papas Rústicas al Romero</div>
+        <div class="card-desc">Papas amarillas peruanas horneadas con romero fresco, ajo confitado y aceite de oliva. Crujientes por fuera, melosas por dentro.</div>
+        <div class="card-footer">
+          <div class="card-price">S/. 28</div>
+          <div class="card-weight">300 g</div>
+        </div>
+      </div>
+      <div class="menu-card reveal reveal-delay-1" data-cat="acompa" style="display:none">
+        <div class="card-tag">Acompañamiento</div>
+        <div class="card-name">Espárragos a la Brasa</div>
+        <div class="card-desc">Espárragos verdes de Ica asados directamente sobre la brasa, con mantequilla noisette, limón y escamas de sal.</div>
+        <div class="card-footer">
+          <div class="card-price">S/. 32</div>
+          <div class="card-weight">250 g</div>
+        </div>
+      </div>
+      <div class="menu-card reveal reveal-delay-2" data-cat="acompa" style="display:none">
+        <div class="card-tag">Acompañamiento</div>
+        <div class="card-name">Puré Ahumado</div>
+        <div class="card-desc">Puré de papa huayro con mantequilla francesa, leche entera y un toque de carbón activo que le da su inconfundible sabor ahumado.</div>
+        <div class="card-footer">
+          <div class="card-price">S/. 30</div>
+          <div class="card-weight">280 g</div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- EXPERIENCE -->
+<section id="experiencia">
+  <div class="experience">
+    <div>
+      <p class="section-label reveal">— La Experiencia</p>
+      <h2 class="section-title reveal reveal-delay-1">Más que una<br><em>cena</em></h2>
+    </div>
+    <div class="exp-grid">
+      <div class="exp-features">
+        <div class="exp-feature reveal">
+          <div class="exp-icon">🔥</div>
+          <div>
+            <div class="exp-feature-title">Parrilla a la vista</div>
+            <div class="exp-feature-desc">Nuestra parrilla abierta te permite ver cada corte en acción. El fuego, el humo y el sonido de la brasa son parte del espectáculo.</div>
+          </div>
+        </div>
+        <div class="exp-feature reveal reveal-delay-1">
+          <div class="exp-icon">🍷</div>
+          <div>
+            <div class="exp-feature-title">Cava de vinos</div>
+            <div class="exp-feature-desc">Más de 80 etiquetas seleccionadas de Argentina, Chile y España. Nuestro sommelier te guiará al maridaje perfecto para tu corte.</div>
+          </div>
+        </div>
+        <div class="exp-feature reveal reveal-delay-2">
+          <div class="exp-icon">🏆</div>
+          <div>
+            <div class="exp-feature-title">Maestros parrilleros</div>
+            <div class="exp-feature-desc">Nuestros chef parrilleros tienen más de 10 años de experiencia y se especializan en el punto exacto de cada corte.</div>
+          </div>
+        </div>
+        <div class="exp-feature reveal reveal-delay-3">
+          <div class="exp-icon">🌿</div>
+          <div>
+            <div class="exp-feature-title">Origen trazable</div>
+            <div class="exp-feature-desc">Trabajamos directamente con ganaderos de confianza. Cada corte tiene trazabilidad completa desde el campo hasta tu mesa.</div>
+          </div>
+        </div>
+      </div>
+      <div class="exp-showcase reveal">
+        <div class="exp-box" data-icon="🥃">
+          <div class="exp-box-content">
+            <div class="exp-box-label">Ambiente</div>
+            <div class="exp-box-title">Sala privada<br>para eventos</div>
+          </div>
+        </div>
+        <div class="exp-box" style="background: linear-gradient(135deg, #1a1008 0%, #0f0a05 100%);" data-icon="🔪">
+          <div class="exp-box-content">
+            <div class="exp-box-label">Experiencia Exclusiva</div>
+            <div class="exp-box-title">Corte en<br>mesa con chef</div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- TESTIMONIALS -->
+<section style="background: var(--deep); padding: 100px 60px;">
+  <div class="testimonials-section">
+    <div style="text-align:center; margin-bottom: 20px;">
+      <p class="section-label reveal" style="text-align:center">— Lo que dicen</p>
+      <h2 class="section-title reveal reveal-delay-1" style="text-align:center">Voces de <em>nuestros</em> comensales</h2>
+    </div>
+    <div class="testimonials-grid">
+      <div class="testimonial-card reveal">
+        <div class="stars">★★★★★</div>
+        <div class="testimonial-quote">"</div>
+        <div class="testimonial-text">El tomahawk fue una experiencia que no olvidaré. El punto de cocción perfectamente logrado y el ambiente oscuro y elegante lo hacen especial. Sin duda el mejor steak house de Lima.</div>
+        <div class="testimonial-author">Carlos M.</div>
+        <div class="testimonial-role">San Isidro, Lima</div>
+      </div>
+      <div class="testimonial-card reveal reveal-delay-1">
+        <div class="stars">★★★★★</div>
+        <div class="testimonial-quote">"</div>
+        <div class="testimonial-text">Vine por mi aniversario y fue perfecto. La sala privada, el sommelier y el filete mignon trufado fueron impecables. Un servicio que combina calidez y profesionalismo.</div>
+        <div class="testimonial-author">Valeria R.</div>
+        <div class="testimonial-role">Miraflores, Lima</div>
+      </div>
+      <div class="testimonial-card reveal reveal-delay-2">
+        <div class="stars">★★★★★</div>
+        <div class="testimonial-quote">"</div>
+        <div class="testimonial-text">Llevo 3 años viniendo y nunca decepciona. La parrilla a la vista es un espectáculo en sí mismo. La picanha a la brasa es simplemente la mejor de la ciudad.</div>
+        <div class="testimonial-author">Jorge P.</div>
+        <div class="testimonial-role">Surco, Lima</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- RESERVATION -->
+<section class="reservation-section" id="reservas">
+  <div class="reservation-inner">
+    <p class="section-label reveal">— Reservas</p>
+    <h2 class="section-title reveal reveal-delay-1">Asegura tu <em>mesa</em></h2>
+    <p class="reveal reveal-delay-2" style="font-style:italic; color: var(--text-muted); margin-top: 16px; font-size: 1.1rem;">
+      Para grupos de más de 8 personas, llámanos directamente.
+    </p>
+    <div class="reservation-form reveal">
+      <div class="form-group">
+        <label class="form-label">Nombre completo</label>
+        <input type="text" class="form-input" placeholder="Tu nombre">
+      </div>
+      <div class="form-group">
+        <label class="form-label">Teléfono / WhatsApp</label>
+        <input type="tel" class="form-input" placeholder="+51 999 000 000">
+      </div>
+      <div class="form-group">
+        <label class="form-label">Fecha</label>
+        <input type="date" class="form-input">
+      </div>
+      <div class="form-group">
+        <label class="form-label">Hora</label>
+        <select class="form-select">
+          <option>12:00 pm</option>
+          <option>1:00 pm</option>
+          <option>2:00 pm</option>
+          <option>7:00 pm</option>
+          <option>8:00 pm</option>
+          <option>9:00 pm</option>
+        </select>
+      </div>
+      <div class="form-group">
+        <label class="form-label">Número de personas</label>
+        <select class="form-select">
+          <option>1 persona</option>
+          <option>2 personas</option>
+          <option>3 personas</option>
+          <option>4 personas</option>
+          <option>5 personas</option>
+          <option>6 personas</option>
+          <option>7–8 personas</option>
+        </select>
+      </div>
+      <div class="form-group">
+        <label class="form-label">Ocasión especial</label>
+        <select class="form-select">
+          <option>Ninguna</option>
+          <option>Cumpleaños</option>
+          <option>Aniversario</option>
+          <option>Reunión de negocios</option>
+          <option>Celebración</option>
+        </select>
+      </div>
+      <div class="form-group full">
+        <label class="form-label">Notas adicionales</label>
+        <input type="text" class="form-input" placeholder="Alergias, preferencias de mesa, etc.">
+      </div>
+      <button class="form-btn">Confirmar Reserva</button>
+    </div>
+  </div>
+</section>
+
+<!-- FOOTER -->
+<footer>
+  <div class="footer-top">
+    <div class="footer-brand">
+      <div class="footer-logo">Black <span>Angus</span> House</div>
+      <div class="footer-tagline">
+        El arte de la brasa perfecta.<br>
+        Carnes de excepción en el corazón de Lima.
+      </div>
+    </div>
+    <div>
+      <div class="footer-col-title">Navegación</div>
+      <ul class="footer-links">
+        <li><a href="#nosotros">Nuestra historia</a></li>
+        <li><a href="#menu">Carta</a></li>
+        <li><a href="#experiencia">Experiencia</a></li>
+        <li><a href="#reservas">Reservas</a></li>
+      </ul>
+    </div>
+    <div>
+      <div class="footer-col-title">Horarios</div>
+      <ul class="footer-links">
+        <li><a href="#">Lunes – Viernes</a></li>
+        <li><a href="#">12pm – 3pm</a></li>
+        <li><a href="#">7pm – 11pm</a></li>
+        <li><a href="#">Sábados y Domingos</a></li>
+        <li><a href="#">12pm – 11pm</a></li>
+      </ul>
+    </div>
+    <div>
+      <div class="footer-col-title">Contacto</div>
+      <div class="footer-contact-item">📍 Av. La Paz 1234, Miraflores, Lima</div>
+      <div class="footer-contact-item">📞 (01) 234-5678</div>
+      <div class="footer-contact-item">💬 +51 987 654 321</div>
+      <div class="footer-contact-item">✉️ hola@blackangushouse.pe</div>
+    </div>
+  </div>
+  <div class="footer-bottom">
+    <div class="footer-copy">© 2024 Black Angus House. Todos los derechos reservados.</div>
+    <div class="footer-social">
+      <a href="#" class="social-link">ig</a>
+      <a href="#" class="social-link">fb</a>
+      <a href="#" class="social-link">tw</a>
+    </div>
+  </div>
+</footer>
+
+<script>
+  // Custom cursor
+  const cursor = document.getElementById('cursor');
+  const ring = document.getElementById('cursorRing');
+  let mx = 0, my = 0, rx = 0, ry = 0;
+  document.addEventListener('mousemove', e => {
+    mx = e.clientX; my = e.clientY;
+    cursor.style.left = mx - 6 + 'px';
+    cursor.style.top = my - 6 + 'px';
+  });
+  function animRing() {
+    rx += (mx - rx) * 0.12;
+    ry += (my - ry) * 0.12;
+    ring.style.left = rx - 18 + 'px';
+    ring.style.top = ry - 18 + 'px';
+    requestAnimationFrame(animRing);
+  }
+  animRing();
+  document.querySelectorAll('a, button, .menu-card, .exp-feature').forEach(el => {
+    el.addEventListener('mouseenter', () => {
+      cursor.style.transform = 'scale(2.5)';
+      ring.style.transform = 'scale(1.5)';
+      ring.style.opacity = '0.8';
+    });
+    el.addEventListener('mouseleave', () => {
+      cursor.style.transform = 'scale(1)';
+      ring.style.transform = 'scale(1)';
+      ring.style.opacity = '0.5';
+    });
+  });
+
+  // Embers
+  function createEmber() {
+    const e = document.createElement('div');
+    e.className = 'ember';
+    e.style.left = Math.random() * 100 + '%';
+    e.style.animationDuration = (4 + Math.random() * 6) + 's';
+    e.style.animationDelay = Math.random() * 4 + 's';
+    e.style.width = e.style.height = (1 + Math.random() * 3) + 'px';
+    e.style.background = Math.random() > 0.5 ? '#c9933a' : '#c0392b';
+    document.getElementById('embers').appendChild(e);
+    setTimeout(() => e.remove(), 12000);
+  }
+  setInterval(createEmber, 300);
+
+  // Nav scroll
+  window.addEventListener('scroll', () => {
+    document.getElementById('nav').classList.toggle('scrolled', window.scrollY > 60);
+  });
+
+  // Scroll reveal
+  const revealEls = document.querySelectorAll('.reveal');
+  const observer = new IntersectionObserver(entries => {
+    entries.forEach(e => { if (e.isIntersecting) e.target.classList.add('visible'); });
+  }, { threshold: 0.12 });
+  revealEls.forEach(el => observer.observe(el));
+
+  // Menu tabs
+  function filterMenu(cat) {
+    document.querySelectorAll('.menu-tab').forEach(t => t.classList.remove('active'));
+    event.target.classList.add('active');
+    document.querySelectorAll('.menu-card').forEach(c => {
+      c.style.display = c.dataset.cat === cat ? 'block' : 'none';
+    });
+    // Re-trigger reveal
+    document.querySelectorAll('.menu-card[style*="block"]').forEach(c => {
+      c.classList.remove('visible');
+      setTimeout(() => c.classList.add('visible'), 50);
+    });
+  }
+
+  // Form button feedback
+  document.querySelector('.form-btn').addEventListener('click', function() {
+    this.textContent = '✓ Reserva Confirmada';
+    this.style.background = '#2ecc71';
+    setTimeout(() => {
+      this.textContent = 'Confirmar Reserva';
+      this.style.background = '';
+    }, 3000);
+  });
+</script>
+</body>
+</html>
