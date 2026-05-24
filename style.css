@@ -1,0 +1,88 @@
+@import url('https://fonts.googleapis.com/css2?family=Tangerine:wght@400;700&display=swap');
+
+body {
+    background: #0a0705;
+    color: #f5ede0;
+    font-family: 'Cormorant Garamond', serif;
+    overflow-x: hidden;
+}
+
+#navbar {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 20px 40px;
+    background: linear-gradient(to bottom, rgba(255, 197, 71, 0.774), rgba(31, 21, 15, 0.05));
+}
+
+.nav-links { display: flex; gap: 40px; list-style: none; }
+.nav-links a {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 0.85rem;
+    letter-spacing: 3px;
+    text-transform: uppercase;
+    color: white;
+    text-decoration: none;
+    opacity: 0.75;
+    transition: opacity 0.3s, color 0.3s;
+}
+.nav-links a:hover {
+    opacity: 1;
+}
+#banner {
+    font-family: 'Tangerine';
+    display: flex;
+    margin: 8%;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    height: 80vh;
+    text-align: center;
+    background: linear-gradient(to bottom, rgba(255, 197, 71, 0.774), rgba(31, 21, 15, 0.05));
+}
+#banner h2 {
+    font-size: 4.5rem;
+    padding: 40px;
+    margin-bottom: 0px;
+}
+
+#banner img {
+    max-width: 95%;
+    height: auto;
+}
+
+#banner button {
+    font-family: 'Cormorant Garamond', serif;
+    text-decoration: none;
+    font-size: 0.85rem;
+    letter-spacing: 3px;
+    text-transform: uppercase;
+    color: white;
+    background-color: transparent;
+    border: 1px solid rgba(255, 255, 255, 0.555);
+    padding: 10px 20px;
+    cursor: pointer;
+    transition: background-color 0.3s, color 0.3s, border-color 0.3s;
+    margin-bottom: 100px;
+}
+#banner button a {
+    color: rgba(255, 197, 71, 0.774);
+    text-decoration: none;
+}
+#banner button:hover {
+    color: #0a0705;
+    border: 1px solid rgba(255, 255, 255, 1);
+    a{
+        transition: color 0.3s;
+        color: rgba(255, 197, 71, 1);
+    }
+}
+
+#reasoning {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 20px;
+    padding: 40px 20px;
+}
