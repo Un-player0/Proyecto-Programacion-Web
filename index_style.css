@@ -34,6 +34,7 @@ body {
     position: relative;
     flex-wrap: wrap;
     z-index: 100;
+    filter: blur(-1vw);
 }
 
 .nav-logo {
@@ -94,14 +95,27 @@ body {
 /* ── BANNER ──────────────────────────────────────────── */
 
 .banner-image {
-    background: image-set(url('images/CarneParrilla.jpg') 1x, url('images/CarneParrilla.jpg') 2x);
     width: 100%;
     min-height: 45vw;
+    position: relative;
+    overflow: hidden;
+}
+
+.difuminado {
+    background: image-set(url('images/CarneParrilla.jpg') 1x, url('images/CarneParrilla.jpg') 2x);
+    position: absolute;
     background-repeat: no-repeat;
     background-size: cover;
     background-position: center;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.4);
+    filter: blur(0.4vw);
+    z-index: 1;
 }
- 
+
 .banner-content {
     display: flex;
     flex-direction: column;
@@ -110,8 +124,9 @@ body {
     gap: 20px;
     padding: 40px 20px;
     font: "cormorant garamond", serif;
+    z-index: 2;
 }
- 
+
 .banner-content h2 {
     font-size: clamp(1.2rem, 3.5vw, 2.5rem);
     color: white;
@@ -122,6 +137,7 @@ body {
     text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
     margin-top: 13vw;
     padding: 0.5rem 1rem;
+    z-index: 2;
 }
  
 .banner-content button {
@@ -139,6 +155,7 @@ body {
     cursor: pointer;
     transition: background-color 0.3s, color 0.3s;
     margin-top: 10vw;
+    z-index: 2;
 }
  
 .banner-content button:hover {
