@@ -3,6 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="socios_style.css">
     <title>Black Angus House | Carnes y Parrilla</title>
 </head>
 
@@ -11,87 +12,107 @@
 <body>
   <!-- ENCABEZADO -->
   <header>
-      <nav>
-          <a href="index.html"><img src="images/logo.png" alt="Black Angus Logo" height="70"/></a>
-          <a href="menu.html">Menu</a>
-          <a href="locales.html">Locales</a>
-          <a href="reservar.html">Realizar una reserva</a>
-          <a href="nosotros.html">Acerca de nosotros</a>
-          <a href="login.html">Ingresar</a>
-      </nav>
-      <hr/>
+    <div class="navbar-area">
+      <section class="container">
+        <nav class="navbar contain">
+          <a href="index.html" class="nav-logo"><img src="images/logo.png" alt="Black Angus Logo" height="70"/></a>
+          <input type="checkbox" id="nav-toggle" class="nav-toggle" />
+          <label for="nav-toggle" class="nav-hamburger" aria-label="Abrir menú">
+            <span></span>
+            <span></span>
+            <span></span>
+          </label>
+            <ul class="nav-links">
+              <li><a href="menu.html">Menu</a></li>
+              <li><a href="locales.html">Locales</a></li>
+              <li><a href="nosotros.html">Acerca de nosotros</a></li>
+              <li><a href="reservar.html">Realizar una reserva</a></li>
+              <li><a href="login.html">Ingresar</a></li>
+            </ul>
+        </nav>
+      </section>
+    </div>
   </header>
 
   <main>
-    <div>
-      <h2> Descuentos exclusivos </h2>
-      <p> El programa de socios recompensa a los clientes leales con descuentos especiales y beneficios únicos.</p>
-      <button><a href="reservar.html">Unirme</a></button>
-    </div>
+    <section id ="discounts">
+      <div>
+        <h2> Descuentos exclusivos </h2>
+        <p> El programa de socios recompensa a los clientes leales con descuentos especiales y beneficios únicos.</p>
+        <button><a href="reservar.html">Unirme</a></button>
+      </div>
 
-    <div>
-      <div> Como funciona </div>
-      <div> Puntos por comer </div>
-      <div> El programa de socios esta diseñado para recompensarte con cada compra realizada </div>
-      <div> Por cada S/5 soles de compra completada, obten 5 puntos </div>
-      <div> Si realizas una reserva y la confirmas, obtienes 10 puntos adicionales </div>
-      <div> Puedes acumular puntos para luego canjearlos por descuentos o combos gratis en tus futuras visitas. </div>
+      <div>
+        <p> Como funciona: Puntos por comer </p>
+        <p> El programa de socios esta diseñado para recompensarte con cada compra realizada </p>
+        <p> Por cada S/5 soles de compra completada, obten 5 puntos </p>
+        <p> Si realizas una reserva y la confirmas, obtienes 10 puntos adicionales </p>
+        <p> Puedes acumular puntos para luego canjearlos por descuentos o combos gratis en tus futuras visitas. </p>
 
-      <button><a href="reservar.html">Unirme</a></button>
-      <button><a href="reservar.html">Preguntas frecuentes</a></button>
-    </div>
-    <hr/>
-    <div>
-      <div> Date un gustito </div>
-      <div> Canjea tus puntos por descuentos exclusivos en nuestros platos más deliciosos. </div>
-      <table>
-        <tr>
-          <th>Puntos acumulados</th>
-          <th>Descuento</th>
-        </tr>
-        <tr>
-          <td>100 puntos</td>
-          <td>Bebida 1L gratis a eleccion</td>
-        </tr>
-        <tr>
-          <td>200 puntos</td>
-          <td>S/ 20 de descuento en tu próxima comida</td>
-        </tr>
-        <tr>
-          <td>500 puntos</td>
-          <td>Combo gratis (entrada + plato principal)</td>
-        </tr>
-        <tr>
-          <td>1000 puntos</td>
-          <td>Parrilla gratis para 2 personas</td>
-        </tr>
-        <tr>
-          <td>2000 puntos</td>
-          <td>Parrilla gratis familiar</td>
-        </tr>
-      </table>
-      <div> Puedes ver los puntos acumulados en tu perfil Black Angus </div>
-    </div>
-    <hr/>
-    <div>
-      <div> Eso no es todo </div>
-      <div> Además de los descuentos, nuestros socios disfrutan de beneficios unicos </div>
-      <div> Bono cumpleañero: Hacer compras el dia de tu cumpleaños duplica los puntos ganados por compras realizadas durante todo el dia </div>
-      <div> Regalo familiar: Por cada 4 personas que invites a comer, disfruta de un postre gratuito a eleccion </div>
-      <div> Sorpresas por email: Recibe ofertas exclusivas y promociones especiales directamente en tu bandeja de entrada todos los meses </div>
-    </div> 
-    
-    <button><a href="reservar.html">Unirme</a></button>
+        <button><a href="reservar.html">Unirme</a></button>
+        <button><a href="socios-faq.html">Preguntas frecuentes</a></button>
+      </div>
+    </section> 
+
+      <div id="rewards">
+        <p> Date un gustito </p>
+        <p> Canjea tus puntos por descuentos exclusivos en nuestros platos más deliciosos. </p>
+        <table>
+          <tr>
+            <th>Puntos acumulados</th>
+            <th>Descuento</th>
+          </tr>
+          <tr>
+            <td>100 puntos</td>
+            <td>Bebida 1L gratis a eleccion</td>
+          </tr>
+          <tr>
+            <td>200 puntos</td>
+            <td>S/ 20 de descuento en tu próxima comida</td>
+          </tr>
+          <tr>
+            <td>500 puntos</td>
+            <td>Combo gratis (entrada + plato principal)</td>
+          </tr>
+          <tr>
+            <td>1000 puntos</td>
+            <td>Parrilla gratis para 2 personas</td>
+          </tr>
+          <tr>
+            <td>2000 puntos</td>
+            <td>Parrilla gratis familiar</td>
+          </tr>
+        </table>
+        <p> Puedes ver los puntos acumulados en tu perfil Black Angus </p>
+      </div>
+
+      <div id="benefits">
+        <p> Eso no es todo </p>
+        <p> Además de los descuentos, nuestros socios disfrutan de beneficios unicos </p>
+        <p> Bono cumpleañero: Hacer compras el dia de tu cumpleaños duplica los puntos ganados por compras realizadas durante todo el dia </p>
+        <p> Regalo familiar: Por cada 4 personas que invites a comer, disfruta de un postre gratuito a eleccion </p>
+        <p> Sorpresas por email: Recibe ofertas exclusivas y promociones especiales directamente en tu bandeja de entrada todos los meses </p>
+        <button><a href="reservar.html">Unirme</a></button>
+      </div> 
 
   <!-- PIE DE PÁGINA -->
   <footer>
-    <hr/>
-    <ul>
-      <li><a href="nosotros.html">Acerca de nosotros</a></li>
-      <li><a href="nosotros.html#contacto">Contáctanos</a></li>
-      <li><a href="https://forms.gle/2TB8Co67aePxxZjV9" target="_blank"><img src="images/complain_book.png" alt="Libro de reclamaciones" width="80px"/></a></li>
-    </ul>
-    <p>© 2026 Black Angus House - Todos los derechos reservados</p>
+    <div class="footer-about">
+      <nav class="footer-nav contain">
+        <input type="checkbox" id="footer-nav-toggle" class="footer-nav-toggle" />
+        <label for="footer-nav-toggle" class="footer-nav-hamburger" aria-label="Abrir menú del pie de página">
+          <span></span>
+          <span></span>
+          <span></span>
+        </label>
+        <ul class="footer-nav-links">
+            <li><a href="nosotros.html">Acerca de nosotros</a></li>
+            <li><a href="nosotros.html#contacto">Contáctanos</a></li>
+            <li><a href="https://forms.gle/2TB8Co67aePxxZjV9" target="_blank"><img src="images/complain_book.png" alt="Libro de reclamaciones" width="100vw"/></a></li>
+        </ul>
+      </nav>
+    </div>
+    <p class="copyright">© 2026 Black Angus House - Todos los derechos reservados</p>
   </footer>
 </body>
 </html>

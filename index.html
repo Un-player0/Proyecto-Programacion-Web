@@ -4,106 +4,143 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Black Angus House | Carnes y Parrilla</title>
-    <link rel="stylesheet" href="style.css" />
+    <link rel="stylesheet" href="index_style.css" />
 </head>
 
 <body>
   <!-- ENCABEZADO -->
-  <header>
-      <nav id="navbar">
-          <a href="index.html" class="nav-logo"><img src="images/logo.png" alt="Black Angus Logo" height="70"/></a>
+
+  <div class="banner-image">
+    <section class="container">
+      <nav class="navbar contain">
+        <a href="index.html" class="nav-logo"><img src="images/logo.png" alt="Black Angus Logo" height="70"/></a>
+        <input type="checkbox" id="nav-toggle" class="nav-toggle" />
+        <label for="nav-toggle" class="nav-hamburger" aria-label="Abrir menú">
+          <span></span>
+          <span></span>
+          <span></span>
+        </label>
           <ul class="nav-links">
-              <li><a href="menu.html">Menu</a></li>
-              <li><a href="locales.html">Locales</a></li>
-              <li><a href="nosotros.html">Acerca de nosotros</a></li>
-              <li><a href="reservar.html">Realizar una reserva</a></li>
-              <li><a href="login.html">Ingresar</a></li>
+            <li><a href="menu.html">Menu</a></li>
+            <li><a href="locales.html">Locales</a></li>
+            <li><a href="nosotros.html">Acerca de nosotros</a></li>
+            <li><a href="reservar.html">Realizar una reserva</a></li>
+            <li><a href="login.html">Ingresar</a></li>
           </ul>
       </nav>
-      <hr/>
-  </header>
+    </section>
+    <section class="container banner-content">
+      <h2>¡Disfruta de las mejores carnes y parrillas en tu restaurante favorito!</h2>
+      <button><a href="reservar.html">RESERVAR</a></button>
+    </section>
+  </div>
 
   <!-- CONTENIDO PRINCIPAL -->
   <main>
-
-    <!-- BANNER -->
-    <div id="banner">
-      <h2> Disfruta de las mejores carnes y parrillas en tu restaurante favorito </h2>
-      <img src="images/CarneParrilla.jpg" alt="Imagen de carne a la parrilla" width="700" />
-      <br/> 
-      <button><a href="reservar.html">Reservar</a></button>
-    </div>
-    <hr/>
-
     <!-- RAZON PARA ELEGIR NUESTRO RESTAURANTE -->
-    <div id="reasoning">
-      <img src="images/CarneAsada.jpeg" alt="Imagen de carne asada" width="400px"/>
-      <h2>¿Por qué elegir Black Angus House?</h2>
-      <p>En Black Angus House, nos enorgullece ofrecer a nuestros clientes una experiencia culinaria excepcional. Nuestra pasión por la calidad y el sabor se refleja en cada plato que servimos.</p>
-      <button><a href="reservar.html">Reservar</a></button>
+    <div class="container about-container">
+      <section class="about-info">
+        <img src="images/CarneAsada.jpeg" alt="Imagen de carne asada"/>
+        <section class="about-text">
+        <h2>¿Por qué elegir Black Angus House?</h2>
+        <p>En Black Angus House, nos enorgullece ofrecer a nuestros clientes una experiencia culinaria excepcional. Nuestra pasión por la calidad y el sabor se refleja en cada plato que servimos.</p><br>
+        <button><a href="reservar.html">Reservar</a></button>
+        </section>
+      </section>
     </div>
-    <hr/>
 
     <!-- DESTACADOS -->
-    <section id="menu-destacado">
-      <h2> Platos destacados </h2>
-      <div id="cards-container">
-        <article>
-          <a href="menu.html#anticucho">
-          <h3> Anticucho de corazón Clásico </h3>
-          <img src="images/anticucho.png" alt="Imagen de anticucho" width="300px"/>
-          <p> Corazón de res marinado en ají panca, vinagre y comino. Servido con papa y choclo. </p>
-          <p class="precio"> Precio: S/ 18.00 </p>
-          </a>
-          <br/>
-        </article>
+    <section class="recommendations">
 
-        <article>
-          <a href="menu.html#parrilla">
-          <h3> Bife de Chorizo Argentino </h3>
-          <img src="images/Bife.jpg" alt="Imagen de bife de chorizo" width="300px"/>
-          <p> Incluye porcion de papas fritas </p>
-          <p class="precio"> Precio: S/ 35.00 </p>
-          </a>
-          <br/>
-        </article>
-
-        <article>
-          <a href="menu.html#parrilla">
-          <h3> Filete Mignon de Pechuga </h3>
-          <img src="images/filete_mignon.jpg" alt="Imagen de filete mignon" width="300px"/>
-          <p> Se prepara envolviendo pechugas en tiras de tocino y champiñones</p>
-          <p class="precio"> Precio: S/ 40.00 </p>
-          </a>
-          <br/>
-        </article>
+      <div class="recommendations__header">
+        <h2 class="recommendations__title"> Platos Destacados</h2>
       </div>
+
+      <!-- Card 1: Anticucho de corazón Clásico -->
+      <div class="recommendations__grid">
+        <article class="card">
+          <div class="card__image-wrapper">
+            <a href="menu.html#anticucho">
+            <div class="card__image-placeholder">
+              <img src="images/anticucho.png" alt="Imagen de anticucho"/>
+            </div>
+            </a>
+          </div>
+          <div class="card__body">
+            <a href="menu.html#anticucho">
+            <span class="card__title">Anticucho de corazón Clásico</span>
+            </a>
+            <p class="card__description"> Corazón de res marinado en ají panca, vinagre y comino. Servido con papa y choclo. </p>
+            <p class="card__description"> Precio: S/ 18.00 </p>
+          </div>
+        </article>
+
+        <!-- Card 2: Top Sirloin Entree -->
+        <article class="card">
+          <div class="card__image-wrapper">
+            <a href="menu.html#parrilla">
+            <div class="card__image-placeholder">
+              <img src="images/Bife.jpg" alt="Imagen de bife de chorizo" />
+            </div>
+            </a>
+          </div>
+          <div class="card__body">
+            <a href="menu.html#parrilla">
+            <span class="card__title">Bife de Chorizo Argentino</span>
+            </a>
+            <p class="card__description"> Incluye porcion de papas fritas </p>
+            <p class="card__description"> Precio: S/ 35.00 </p>
+          </div>
+        </article>
+
+        <!-- Card 3: Filete Mignon de Pechuga -->
+        <article class="card">
+          <div class="card__image-wrapper">
+            <a href="menu.html#parrilla">
+            <div class="card__image-placeholder">
+              <img src="images/filete_mignon.jpg" alt="Imagen de filete mignon" />
+            </div>
+            </a>
+          </div>
+          <div class="card__body">
+            <a href="menu.html#parrilla">
+            <span class="card__title">Filete Mignon de Pechuga</span>
+            </a>
+            <p class="card__description"> Se prepara envolviendo pechugas en tiras de tocino y champiñones</p>
+            <p class="card__description"> Precio: S/ 40.00 </p>
+          </div>
+        </article>
+
+        </div>
     </section>
-    <!-- !!! NO IMPLEMENTADO !!! -->
-    <!-- SOCIOS -->
-    <!--
-    <div id="socios">
+
+  <section class="join-us">
         <h2>Descubre nuestros beneficios</h2>
         <p>Se parte de nuestro programa de recompensas y descubre las ofertas que tenemos para ti</p>
-        <img src="images/join.png" alt="Unete ya!"/>
-        <br/> <br/>
         <button>Unirse</button>
-        <button>Conoce mas información</button>
-        <br/> <br/>
-    </div>
-    -->
+        <button><a href="socios.html">Conoce más información</a></button>
+  </div>
+  </section>
   </main>
   
-
     <!-- PIE DE PÁGINA -->
-    <footer>
-        <hr/>
-        <ul>
+  <footer>
+    <div class="footer-about">
+      <nav class="footer-nav contain">
+        <input type="checkbox" id="footer-nav-toggle" class="footer-nav-toggle" />
+        <label for="footer-nav-toggle" class="footer-nav-hamburger" aria-label="Abrir menú del pie de página">
+          <span></span>
+          <span></span>
+          <span></span>
+        </label>
+        <ul class="footer-nav-links">
             <li><a href="nosotros.html">Acerca de nosotros</a></li>
             <li><a href="nosotros.html#contacto">Contáctanos</a></li>
-            <li><a href="https://forms.gle/2TB8Co67aePxxZjV9" target="_blank"><img src="images/complain_book.png" alt="Libro de reclamaciones" width="80px"/></a></li>
+            <li><a href="https://forms.gle/2TB8Co67aePxxZjV9" target="_blank"><img src="images/complain_book.png" alt="Libro de reclamaciones" width="100vw"/></a></li>
         </ul>
-        <p>© 2026 Black Angus House - Todos los derechos reservados</p>
-    </footer>
+      </nav>
+    </div>
+    <p class="copyright">© 2026 Black Angus House - Todos los derechos reservados</p>
+  </footer>
 </body>
 </html>

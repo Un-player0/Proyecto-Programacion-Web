@@ -1,53 +1,196 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="es">
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Document</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,600;1,400&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="faq_style.css">
+  <title>Preguntas Frecuentes - Socios | Black Angus House</title>
 </head>
 <body>
 <!-- ENCABEZADO -->
   <header>
-      <nav>
-          <a href="index.html"><img src="images/logo.png" alt="Black Angus Logo" height="70"/></a>
-          <a href="menu.html">Menu</a>
-          <a href="locales.html">Locales</a>
-          <a href="reservar.html">Realizar una reserva</a>
-          <a href="nosotros.html">Acerca de nosotros</a>
-          <a href="login.html">Ingresar</a>
-      </nav>
-      <hr/>
+    <div class="navbar-area">
+      <section class="container">
+        <nav class="navbar contain">
+          <a href="index.html" class="nav-logo"><img src="images/logo.png" alt="Black Angus Logo" height="70"/></a>
+          <input type="checkbox" id="nav-toggle" class="nav-toggle" />
+          <label for="nav-toggle" class="nav-hamburger" aria-label="Abrir menú">
+            <span></span>
+            <span></span>
+            <span></span>
+          </label>
+            <ul class="nav-links">
+              <li><a href="menu.html">Menu</a></li>
+              <li><a href="locales.html">Locales</a></li>
+              <li><a href="nosotros.html">Acerca de nosotros</a></li>
+              <li><a href="reservar.html">Realizar una reserva</a></li>
+              <li><a href="login.html">Ingresar</a></li>
+            </ul>
+        </nav>
+      </section>
+    </div>
   </header>
 
+  <main id="main-content">
 
-  <main>
-    <div>
-      <h1> FAQ - Preguntas frecuentes sobre el programa de socios </h1>
+    <div class="faq-hero">
+      <h1>Programa de Socios</h1>
+      <p>Preguntas Frecuentes</p>
     </div>
 
-    <div>
-      <h2> ¿Qué es el programa de socios de Black Angus House? </h2>
-      <p>El programa de socios de Black Angus House es una iniciativa diseñada para recompensar a nuestros clientes leales con descuentos exclusivos, promociones especiales y beneficios únicos en nuestros restaurantes. Al unirte al programa, podrás acumular puntos por cada compra que realices y canjearlos por descuentos en tus futuras visitas.</p>
+    <section class="faq-section">
+      <h2 class="faq-section-title">Sobre el Programa</h2>
 
-      <h2> ¿Cómo puedo unirme al programa de socios? </h2>
-      <p>Para unirte al programa de socios, simplemente debes visitar cualquiera de nuestros locales y solicitar información sobre el programa. También puedes registrarte en línea a través de nuestro sitio web.</p>
+      <div class="faq-item">
+        <input type="checkbox" id="faq-1" class="faq-toggle" />
+        <label for="faq-1" class="faq-question">
+          ¿Qué es el programa de socios de Black Angus House?
+          <span class="faq-icon"></span>
+        </label>
+        <div class="faq-answer">
+          <div class="faq-answer-inner">
+            El programa de socios de Black Angus House es una iniciativa diseñada para recompensar a nuestros clientes leales con descuentos exclusivos, promociones especiales y beneficios únicos en nuestros restaurantes. Al unirte al programa, podrás acumular puntos por cada compra que realices y canjearlos por descuentos en tus futuras visitas.
+          </div>
+        </div>
+      </div>
 
-      <h2> ¿Cuáles son los beneficios de ser un socio de Black Angus House? </h2>
-      <p>Como socio de Black Angus House, disfrutarás de descuentos exclusivos en nuestros platos más populares, promociones especiales durante todo el año, acceso a eventos exclusivos para socios y la oportunidad de acumular puntos por cada compra que realices. Descubre la lista entera de beneficios <a href="beneficios.html">aquí</a>.</p>
+      <div class="faq-item">
+        <input type="checkbox" id="faq-2" class="faq-toggle" />
+        <label for="faq-2" class="faq-question">
+          ¿Cómo puedo unirme al programa de socios?
+          <span class="faq-icon"></span>
+        </label>
+        <div class="faq-answer">
+          <div class="faq-answer-inner">
+            Para unirte al programa de socios, simplemente debes visitar cualquiera de nuestros locales y solicitar información sobre el programa. También puedes registrarte en línea a través de nuestro sitio web.
+          </div>
+        </div>
+      </div>
 
-    </div>
+      <div class="faq-item">
+        <input type="checkbox" id="faq-3" class="faq-toggle" />
+        <label for="faq-3" class="faq-question">
+          ¿Cuáles son los beneficios de ser un socio de Black Angus House?
+          <span class="faq-icon"></span>
+        </label>
+        <div class="faq-answer">
+          <div class="faq-answer-inner">
+            Como socio de Black Angus House, disfrutarás de descuentos exclusivos en nuestros platos más populares, promociones especiales durante todo el año, acceso a eventos exclusivos para socios y la oportunidad de acumular puntos por cada compra que realices. Descubre la lista entera de beneficios <a href="beneficios.html">aquí</a>.
+          </div>
+        </div>
+      </div>
+
+      <div class="faq-item">
+        <input type="checkbox" id="faq-4" class="faq-toggle" />
+        <label for="faq-4" class="faq-question">
+          ¿Qué recompensas puedo obtener con mis puntos?
+          <span class="faq-icon"></span>
+        </label>
+        <div class="faq-answer">
+          <div class="faq-answer-inner">
+            El programa de socios te permite canjear tus puntos en cualquier momento una vez que alcances el mínimo requerido. Las recompensas disponibles son:
+            <ul>
+              <li>500 puntos — 1 postre gratis</li>
+              <li>750 puntos — 1 bebida especial gratis</li>
+              <li>1000 puntos — $10 de descuento en tu orden</li>
+              <li>1500 puntos — 1 entrada de cortesía</li>
+              <li>2500 puntos — 1 plato principal gratis (hasta $35 de valor)</li>
+            </ul>
+            Además, durante tu mes de cumpleaños acumularás el doble de puntos. ¡Activa tus notificaciones para no perderte las sorpresas exclusivas para socios!
+          </div>
+        </div>
+      </div>
+
+      <div class="faq-item">
+        <input type="checkbox" id="faq-5" class="faq-toggle" />
+        <label for="faq-5" class="faq-question">
+          ¿Mis recompensas tienen fecha de vencimiento?
+          <span class="faq-icon"></span>
+        </label>
+        <div class="faq-answer">
+          <div class="faq-answer-inner">
+            Las recompensas ganadas vencen a los 120 días desde la fecha en que fueron obtenidas. La recompensa de bienvenida (10% de descuento en tu primera compra) vence 14 días después de tu registro. Las recompensas por referidos vencen 30 días después de que tu amigo se una al programa y realice su primera compra.
+          </div>
+        </div>
+      </div>
+
+      <div class="faq-item">
+        <input type="checkbox" id="faq-6" class="faq-toggle" />
+        <label for="faq-6" class="faq-question">
+          ¿Cómo canjeo mis recompensas?
+          <span class="faq-icon"></span>
+        </label>
+        <div class="faq-answer">
+          <div class="faq-answer-inner">
+            Para usuarios del sitio web, antes de realizar tu pedido en línea o en el restaurante, ingresa a tu cuenta y selecciona la recompensa que deseas canjear. Esta quedará vinculada a tu cuenta y se aplicará automáticamente al momento del pago. Para pedidos en el local, te recomendamos recordarle a tu servidor la oferta que deseas utilizar.
+          </div>
+        </div>
+      </div>
+
+      <div class="faq-item">
+        <input type="checkbox" id="faq-7" class="faq-toggle" />
+        <label for="faq-7" class="faq-question">
+          ¿Qué compras acumulan puntos?
+          <span class="faq-icon"></span>
+        </label>
+        <div class="faq-answer">
+          <div class="faq-answer-inner">
+            Todas las compras de alimentos y bebidas realizadas en nuestros locales o a través de nuestro sitio web son elegibles para acumular puntos. Las compras realizadas a través de terceros no califican para el programa.
+          </div>
+        </div>
+      </div>
+
+      <div class="faq-item">
+        <input type="checkbox" id="faq-8" class="faq-toggle" />
+        <label for="faq-8" class="faq-question">
+          ¿Puedo combinar más de una recompensa en una sola visita?
+          <span class="faq-icon"></span>
+        </label>
+        <div class="faq-answer">
+          <div class="faq-answer-inner">
+            Solo es posible canjear un descuento por visita. Las recompensas y ofertas no pueden combinarse entre sí, ni con otras promociones vigentes. Las recompensas no son válidas en fechas de feriados.
+          </div>
+        </div>
+      </div>
+
+      <div class="faq-item">
+        <input type="checkbox" id="faq-9" class="faq-toggle" />
+        <label for="faq-9" class="faq-question">
+          ¿Cuánto tiempo tarda en verse reflejada mi acumulación de puntos?
+          <span class="faq-icon"></span>
+        </label>
+        <div class="faq-answer">
+          <div class="faq-answer-inner">
+            Una vez completada tu compra en el local o en línea, los puntos se agregarán a tu cuenta en tiempo real. Si no ves tus puntos reflejados, intenta cerrar sesión y volver a ingresar. Si el problema persiste, contáctanos a través de la sección <a href="nosotros.html#contacto">Contáctanos</a> indicando tu nombre, número de socio y fecha de compra.
+          </div>
+        </div>
+      </div>
+
+    </section>
+
   </main>
-
 
   <!-- PIE DE PÁGINA -->
   <footer>
-    <hr/>
-    <ul>
-      <li><a href="nosotros.html">Acerca de nosotros</a></li>
-      <li><a href="nosotros.html#contacto">Contáctanos</a></li>
-      <li><a href="https://forms.gle/2TB8Co67aePxxZjV9" target="_blank"><img src="images/complain_book.png" alt="Libro de reclamaciones" width="80px"/></a></li>
-    </ul>
-    <p>© 2026 Black Angus House - Todos los derechos reservados</p>
+    <div class="footer-about">
+      <nav class="footer-nav contain">
+        <input type="checkbox" id="footer-nav-toggle" class="footer-nav-toggle" />
+        <label for="footer-nav-toggle" class="footer-nav-hamburger" aria-label="Abrir menú del pie de página">
+          <span></span>
+          <span></span>
+          <span></span>
+        </label>
+        <ul class="footer-nav-links">
+            <li><a href="nosotros.html">Acerca de nosotros</a></li>
+            <li><a href="nosotros.html#contacto">Contáctanos</a></li>
+            <li><a href="https://forms.gle/2TB8Co67aePxxZjV9" target="_blank"><img src="images/complain_book.png" alt="Libro de reclamaciones" width="100vw"/></a></li>
+        </ul>
+      </nav>
+    </div>
+    <p class="copyright">© 2026 Black Angus House - Todos los derechos reservados</p>
   </footer>
 </body>
 </html>

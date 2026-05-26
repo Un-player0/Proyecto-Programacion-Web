@@ -3,33 +3,34 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="nosotros_styles.css">
     <title>Black Angus House | Carnes y Parrilla</title>
 </head>
 
 <body>
   <!-- ENCABEZADO -->
   <header>
-      <nav>
-          <a href="index.html"><img src="images/logo.png" alt="Black Angus Logo" height="70"/></a>
-          <a href="menu.html">Menu</a>
-          <a href="locales.html">Locales</a>
-          <a href="reservar.html">Realizar una reserva</a>
-          <a href="nosotros.html">Acerca de nosotros</a>
-          <a href="login.html">Ingresar</a>
-      </nav>
-      <hr/>
+    <div class="navbar-area">
+      <section class="container">
+        <nav class="navbar contain">
+          <a href="index.html" class="nav-logo"><img src="images/logo.png" alt="Black Angus Logo" height="70"/></a>
+          <input type="checkbox" id="nav-toggle" class="nav-toggle" />
+          <label for="nav-toggle" class="nav-hamburger" aria-label="Abrir menú">
+            <span></span>
+            <span></span>
+            <span></span>
+          </label>
+            <ul class="nav-links">
+              <li><a href="menu.html">Menu</a></li>
+              <li><a href="locales.html">Locales</a></li>
+              <li><a href="nosotros.html">Acerca de nosotros</a></li>
+              <li><a href="reservar.html">Realizar una reserva</a></li>
+              <li><a href="login.html">Ingresar</a></li>
+            </ul>
+        </nav>
+      </section>
+    </div>
   </header>
-
-  <!-- NAVEGACIÓN -->
-  <nav>
-    <a href="#historia">Quiénes Somos</a>
-    <a href="#mision">Misión y Visión</a>
-    <a href="#valores">Valores</a>
-    <a href="#equipo">Equipo</a>
-    <a href="#contacto">Contacto</a>
-    <hr/>
-  </nav>
-
   <!-- CONTENIDO PRINCIPAL -->
   <main>
 
@@ -98,42 +99,63 @@
     </section>
 
     <!-- SECCIÓN: EQUIPO -->
-    <section id="equipo">
-      <h2>Nuestro Equipo</h2>
-      <p>Detrás de cada carne hay personas que ponen el alma en su trabajo.</p>
+    <section id="equipo-lista">
+          <div id="equipo-intro">
+            <h1 class="equipo__title">Nuestro Equipo</h1>
+          </div>
 
-      <article>
-        <img src="images/people/carlos.jpg" alt="Foto de Carlos Quispe, fundador" height="500px"/>
-        <h3>Carlos Quispe</h3>
-        <p>Fundador</p>
-        <p>
-          Más de 40 años encendiendo parrillas y preservando el sabor 
-          auténtico del anticucho limeño. Para don Carlos, cocinar es 
-          un acto de amor.
-        </p>
-      </article>
+          <div id="equipo-intro">
+            <h2 class="equipo__subtitle">Detrás de cada carne hay personas que ponen el alma en su trabajo.</h2>
+          </div>
 
-      <article>
-        <img src="images/people/lucia.jpg" alt="Foto de Lucía Quispe, chef principal" height="500px"/>
-        <h3>Lucía Quispe</h3>
-        <p>Chef Principal</p>
-        <p>
-          Hija del fundador y alma de la cocina actual. Lucía estudió 
-          gastronomía en Le Cordon Bleu Lima y fusiona técnica moderna 
-          con las recetas de su padre.
-        </p>
-      </article>
+          <div class="equipo__grid">
 
-      <article>
-        <img src="images/people/marco.jpg" alt="Foto de Marco Flores, parrillero" height="500px"/>
-        <h3>Marco Flores</h3>
-        <p>Maestro Parrillero</p>
-        <p>
-          Con 15 años en la parrilla, Marco conoce cada corte y cada 
-          punto de cocción. Su secreto: buen carbón, buen ojo y mucha paciencia.
-        </p>
-      </article>
-    </section>
+              <!-- SECCIÓN: ENTRADAS -->
+              <article class="card">
+                <div class="card__image-wrapper">
+                  <div class="card__image-placeholder">
+                    <img src="images/people/carlos.jpg" alt="Foto de Carlos Quispe, fundador"/>
+                  </div>
+                </div>
+                <div class="card__body">
+                  <span class="card__title">Carlos Quispe</span>
+                  <p class="card__description"> Fundador </p>
+                  <p class="card__description"> Más de 40 años encendiendo parrillas y preservando el sabor 
+                  auténtico del anticucho limeño. Para don Carlos, cocinar es 
+                  un acto de amor. </p>
+                </div>
+              </article>
+            
+              <article class="card">
+                <div class="card__image-wrapper">
+                  <div class="card__image-placeholder">
+                    <img src="images/people/lucia.jpg" alt="Foto de Lucía Quispe, chef principal"/>
+                  </div>
+                </div>
+                <div class="card__body">
+                  <span class="card__title">Lucía Quispe</span>
+                  <p class="card__description"> Chef Principal </p>
+                  <p class="card__description"> Hija del fundador y alma de la cocina actual. Lucía estudió 
+                  gastronomía en Le Cordon Bleu Lima y fusiona técnica moderna 
+                  con las recetas de su padre. </p>
+                </div>
+              </article>
+
+              <article class="card">
+                <div class="card__image-wrapper">
+                  <div class="card__image-placeholder">
+                    <img src="images/people/marco.jpg" alt="Foto de Marco Flores, parrillero"/>
+                  </div>
+                </div>
+                <div class="card__body">
+                  <span class="card__title">Marco Flores</span>
+                  <p class="card__description"> Maestro Parrillero </p>
+                  <p class="card__description"> Con 15 años en la parrilla, Marco conoce cada corte y cada 
+                  punto de cocción. Su secreto: buen carbón, buen ojo y mucha paciencia. </p>
+                </div>
+              </article>
+          </div>
+        </section>
 
     <!-- SECCIÓN: POR QUÉ ELEGIRNOS -->
     <section id="por-que">
@@ -162,7 +184,6 @@
 
     <!-- SECCIÓN: CONTACTO -->
     <section id="contacto">
-      <hr/>
       <h2>Encuéntranos</h2>
 
       <address>
@@ -201,8 +222,7 @@
 
       <!-- Espacio reservado para mapa -->
       <div id="mapa">
-        <!-- Aquí puedes insertar un iframe de Google Maps -->
-        <!-- Ejemplo:
+
         <iframe
           src="https://www.google.com/maps/embed?pb=..."
           width="100%"
@@ -210,8 +230,6 @@
           allowfullscreen=""
           loading="lazy">
         </iframe>
-        -->
-        <p></p>
       </div>
     </section>
     
@@ -220,13 +238,22 @@
 
     <!-- PIE DE PÁGINA -->
     <footer>
-        <hr/>
-        <ul>
+    <div class="footer-about">
+      <nav class="footer-nav contain">
+        <input type="checkbox" id="footer-nav-toggle" class="footer-nav-toggle" />
+        <label for="footer-nav-toggle" class="footer-nav-hamburger" aria-label="Abrir menú del pie de página">
+          <span></span>
+          <span></span>
+          <span></span>
+        </label>
+        <ul class="footer-nav-links">
             <li><a href="nosotros.html">Acerca de nosotros</a></li>
             <li><a href="nosotros.html#contacto">Contáctanos</a></li>
-            <li><a href="https://forms.gle/2TB8Co67aePxxZjV9" target="_blank"><img src="images/complain_book.png" alt="Libro de reclamaciones" width="80px"/></a></li>
+            <li><a href="https://forms.gle/2TB8Co67aePxxZjV9" target="_blank"><img src="images/complain_book.png" alt="Libro de reclamaciones" width="100vw"/></a></li>
         </ul>
-        <p>© 2026 Black Angus House - Todos los derechos reservados</p>
-    </footer>
+      </nav>
+    </div>
+    <p class="copyright">© 2026 Black Angus House - Todos los derechos reservados</p>
+  </footer>
 </body>
 </html>
