@@ -1,0 +1,359 @@
+@import url('https://fonts.googleapis.com/css2?family=Tangerine:wght@400;700&display=swap');
+
+body {
+    background-color: black;
+}
+
+/* ── NAVBAR ─────────────────────────────────────────── */
+
+.navbar-area {
+    width: 100%;
+    min-height: 10vw;
+}
+
+.navbar {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    overflow: visible;
+    background-color: white;
+    opacity: 0.9;
+    border-radius: 0.6rem;
+    padding: 0 1.2rem;
+    position: relative;
+    flex-wrap: wrap;
+    z-index: 100;
+}
+
+.nav-logo {
+    display: flex;
+    align-items: center;
+    padding: 4px 0;
+    margin-right: 2rem;
+}
+
+.nav-logo img {
+    height: 55px;
+    width: auto;
+}
+
+.nav-toggle {
+    display: none;
+}
+
+.nav-hamburger {
+    display: none;
+    flex-direction: column;
+    gap: 5px;
+    cursor: pointer;
+    padding: 8px;
+}
+
+.nav-hamburger span {
+    display: block;
+    width: 26px;
+    height: 2px;
+    background-color: rgb(96, 45, 45);
+    border-radius: 2px;
+    transition: transform 0.3s, opacity 0.3s;
+}
+
+.nav-links {
+    display: flex;
+    gap: 5vw;
+    list-style: none;
+    margin: 0;
+    padding: 0;
+}
+
+.nav-links a {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 0.85rem;
+    letter-spacing: 3px;
+    text-transform: uppercase;
+    color: rgb(96, 45, 45);
+    text-decoration: none;
+    opacity: 0.75;
+    transition: opacity 0.3s, color 0.3s;
+}
+
+.nav-links a:hover {
+    opacity: 1;
+}
+
+/* ── CONTAINERS ─────────────────────────────────────────── */
+
+.container {
+    display: flex;
+    flex-direction: column;
+}
+
+.contain {
+    max-width: 1200px;
+    margin: auto;
+}
+
+/* ── FORM ─────────────────────────────────────────── */
+
+#form-login {
+    background-color: white;
+    opacity: 0.75;
+    border-radius: 0.6rem;
+    padding: 2rem;
+    width: 100%;
+    max-width: 400px;
+    margin: 2rem auto;
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 1.5rem;
+    letter-spacing: 3px;
+    color: rgb(96, 45, 45);
+}
+#form-login:hover {
+    opacity: 0.9;
+}
+
+form {
+    margin-top: 1.5rem;
+    display: flex;
+    flex-direction: column;
+    gap: 1.2rem;
+}
+
+#form-signup {
+    background-color: white;
+    opacity: 0.7;
+    border-radius: 0.6rem;
+    padding: 2rem;
+    width: 100%;
+    max-width: 400px;
+    margin: 5rem auto;
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 1.5rem;
+    letter-spacing: 3px;
+    color: rgb(96, 45, 45);
+}
+#form-signup:hover {
+    opacity: 0.9;
+}
+
+/* ── INPUTS/BUTTONS ─────────────────────────────────────────── */
+
+.btn {
+    display: inline-block;
+    padding: 0.75rem 1.5rem;
+    font-size: 1rem;
+    color: white;
+    background-color: rgb(96, 45, 45);
+    border: none;
+    border-radius: 0.4rem;
+    cursor: pointer;
+    transition: background-color 0.3s;
+    letter-spacing: 0.1rem;
+}
+
+.google {
+    background-color: rgb(66, 133, 244);
+}
+
+input {
+    padding: 0.75rem 1.5rem;
+    font-size: 1rem;
+    border: 1px solid #ccc;
+    border-radius: 0.4rem;
+    letter-spacing: 0.1rem;
+}
+
+/* ── FOOTER NAVBAR ─────────────────────────────────────────── */
+
+.footer-nav {
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 100%;
+}
+
+.footer-nav-toggle {
+    display: none;
+}
+
+.footer-nav-hamburger {
+    display: none;
+    flex-direction: column;
+    gap: 5px;
+    cursor: pointer;
+    padding: 8px;
+}
+
+.footer-nav-hamburger span {
+    display: block;
+    width: 26px;
+    height: 2px;
+    background-color: rgba(255, 197, 71, 0.9);
+    border-radius: 2px;
+    transition: transform 0.3s, opacity 0.3s;
+}
+
+.footer-nav-links {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 1.5rem 3rem;
+    list-style: none;
+    margin: 0;
+    padding: 0;
+}
+ 
+.footer-nav-links a {
+    color: rgba(255, 255, 255, 0.789);
+    font-size: clamp(0.9rem, 2vw, 1.2rem);
+    text-decoration: none;
+}
+ 
+.footer-nav-links a:hover {
+    color: #ff6347;
+}
+ 
+.copyright {
+    text-align: center;
+    font-size: clamp(0.75rem, 1.8vw, 1rem);
+    color: rgba(255, 255, 255, 0.5);
+    margin-top: 2   rem;
+}
+
+/* ── TABLETS ─────────────────────────────────────────── */
+
+@media (max-width: 768px) {
+
+    /* ── NAVBAR ─────────────────────────────────────────── */
+    .navbar-area {
+        min-height: 10vw;
+    }
+
+    .navbar {
+        flex-wrap: wrap;
+        padding: 0rem 1.2rem;
+        position: relative;
+    }
+
+    .nav-hamburger {
+        display: flex;
+    }
+
+    .nav-links {
+        display: none;
+        position: absolute;
+        top: 100%;
+        left: 0;
+        width: 100%;
+        flex-direction: column;
+        gap: 0;
+        background-color: #0a0705;
+        padding: 0.5rem 0 1rem;
+        z-index: 100;
+        border-bottom-left-radius: 6px;
+        border-bottom-right-radius: 6px;
+    }
+
+    .nav-links li {
+        width: 100%;
+    }
+
+    .nav-links a {
+        display: block;
+        padding: 0.7rem 1.2rem;
+        font-size: 0.85rem;
+        letter-spacing: 2px;
+        color: rgba(255, 197, 71, 0.9);
+    }
+
+    .nav-toggle:checked ~ .nav-links {
+        display: flex;
+    }
+
+    .nav-toggle:checked + .nav-hamburger span:nth-child(1) {
+        transform: translateY(7px) rotate(45deg);
+    }
+
+    .nav-toggle:checked + .nav-hamburger span:nth-child(2) {
+        opacity: 0;
+    }
+
+    .nav-toggle:checked + .nav-hamburger span:nth-child(3) {
+        transform: translateY(-7px) rotate(-45deg);
+    }
+
+    /* ── FORMS ─────────────────────────────────────────── */
+
+    #form-login, #form-signup {
+        width: 50%;
+        max-width: none;
+        font-size: 1.2rem;
+    }
+
+    form {
+        gap: 1rem;
+    }
+
+    /* ── BUTTONS/INPUTS ─────────────────────────────────────────── */
+
+    .btn {
+        width: 100%;
+    }
+
+    .google {
+        width: 50%;
+    }
+
+    input {
+        width: 60;
+    }
+
+    /* ── FOOTER NAVBAR ─────────────────────────────────────────── */
+
+    .footer-nav-hamburger {
+        display: flex;
+    }
+
+    .footer-nav-links {
+        display: none;
+        flex-direction: column;
+        gap: 1rem;
+        align-items: center;
+        width: 100%;
+        padding: 0.5rem 0 1rem;
+    }
+
+    .footer-nav-toggle:checked ~ .footer-nav-links {
+        display: flex;
+    }
+
+    .footer-nav-toggle:checked + .footer-nav-hamburger span:nth-child(1) {
+        transform: translateY(7px) rotate(45deg);
+    }
+
+    .footer-nav-toggle:checked + .footer-nav-hamburger span:nth-child(2) {
+        opacity: 0;
+    }
+
+    .footer-nav-toggle:checked + .footer-nav-hamburger span:nth-child(3) {
+        transform: translateY(-7px) rotate(-45deg);
+    }
+}
+
+/* ── MÓVILES ─────────────────────────────────────────── */
+@media (max-width: 480px) {
+
+    /* ── FORMS ─────────────────────────────────────────── */
+
+    #form-login, #form-signup {
+        width: 60%;
+        max-width: none;
+        font-size: 0.8rem;
+    }
+
+    form {
+        gap: 0.8rem;
+    }
+}

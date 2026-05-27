@@ -3,249 +3,374 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="styles/menu_style.css" />
   <title>Black Angus House | Carnes y Parrilla</title>
 </head>
 
 <body>
   <!-- ENCABEZADO -->
   <header>
-      <nav>
-          <a href="index.html"><img src="images/logo.png" alt="Black Angus Logo" height="70"/></a>
-          <a href="menu.html">Menu</a>
-          <a href="locales.html">Locales</a>
-          <a href="reservar.html">Realizar una reserva</a>
-          <a href="nosotros.html">Acerca de nosotros</a>
-          <a href="login.html">Ingresar</a>
-      </nav>
-      <hr/>
+    <div class="navbar-area">
+      <section class="container">
+        <nav class="navbar contain">
+          <a href="index.html" class="nav-logo"><img src="images/logo_dark.png" alt="Black Angus Logo" height="70"/></a>
+          <input type="checkbox" id="nav-toggle" class="nav-toggle" />
+          <label for="nav-toggle" class="nav-hamburger" aria-label="Abrir menú">
+            <span></span>
+            <span></span>
+            <span></span>
+          </label>
+            <ul class="nav-links">
+              <li><a href="menu.html">Menu</a></li>
+              <li><a href="locales.html">Locales</a></li>
+              <li><a href="nosotros.html">Acerca de nosotros</a></li>
+              <li><a href="reservar.html">Realizar una reserva</a></li>
+              <li><a href="login.html">Ingresar</a></li>
+            </ul>
+        </nav>
+      </section>
+    </div>
   </header>
- 
-  <!-- NAVEGACIÓN -->
-  <nav>
-    <a href="#entradas">Entradas</a>
-    <a href="#anticuchos">Anticuchos</a>
-    <a href="#parrilla">Parrilla</a>
-    <a href="#combos">Combos</a>
-    <a href="#bebidas">Bebidas</a>
-    <hr/>
-  </nav>
- 
+
   <!-- CONTENIDO PRINCIPAL -->
   <main>
-     
-    <!-- SECCIÓN: ENTRADAS -->
-    <section id="entradas">
-      <h2>Entradas</h2>
-      <div id="cards-container">
+    <div class="menu-navbar">
+      <ul class="nav-links">
+        <li><a href="promociones.html">Promociones</a></li>
+        <li><a href="#Entradas">Entradas</a></li>
+        <li><a href="#Anticuchos">Anticuchos</a></li>
+        <li><a href="#Carnes-a-la-Parrilla">Carnes A La Parrilla</a></li>
+        <li><a href="#Combos">Combos</a></li>
+        <li><a href="#Bebidas">Bebidas</a></li>
+      </ul>
+    </div>
+    <div class="menu-container">
+      
+        <!-- MENU -->
 
-        <article>
-          <button>
-          <h3>Causa</h3>
-          <p>Incluye salsa huancaína.</p>
-          <p>S/ 14</p>
-          </button>
-        </article>
-  
-        <article>
-          <button>
-          <h3>Chorizo casero</h3>
-          <p>3 chorizos caseros</p>
-          <p>S/ 12</p>
-          </button>
-        </article>
-  
-        <article>
-          <button>
-          <h3>Tequeños de queso</h3>
-          <p>6 tequeños rellenos de queso con crema de palta.</p>
-          <p>S/ 16</p>
-          </button>
-        </article>
+        <div id="platillos-intro">
+          <h1 class="platillos__title">Nuestros Platillos</h1>
+        </div>
+        <section id="platillos-lista">
+          <div id="platillos-intro">
+            <h2 id="Entradas" class="platillos__subtitle">Entradas</h2>
+          </div>
+
+          <div class="platillos__grid">
+
+              <!-- SECCIÓN: ENTRADAS -->
+              <article class="card">
+                <div class="card__image-wrapper">
+                  <div class="card__image-placeholder">
+                    <img src="images/Causa.jpg" alt="Imagen de platillo Causa"/>
+                  </div>
+                </div>
+                <div class="card__body">
+                  <span class="card__title">Causa</span>
+                  <p class="card__description"> Incluye salsa huancaína. </p>
+                  <p class="card__description"> Precio: S/ 14 </p>
+                </div>
+              </article>
+            
+              <article class="card">
+                <div class="card__image-wrapper">
+                  <div class="card__image-placeholder">
+                    <img src="images/Chorizo_Casero.jpeg" alt="Imagen de platillo Chorizo casero"/>
+                  </div>
+                </div>
+                <div class="card__body">
+                  <span class="card__title">Chorizo casero</span>
+                  <p class="card__description"> 3 chorizos caseros </p>
+                  <p class="card__description"> Precio: S/ 12 </p>
+                </div>
+              </article>
+
+              <article class="card">
+                <div class="card__image-wrapper">
+                  <div class="card__image-placeholder">
+                    <img src="images/Tequenos_de_Queso.jpg" alt="Imagen de platillo Tequeños de queso"/>
+                  </div>
+                </div>
+                <div class="card__body">
+                  <span class="card__title">Tequeños de queso</span>
+                  <p class="card__description"> 6 tequeños rellenos de queso con crema de palta. </p>
+                  <p class="card__description"> Precio: S/ 16 </p>
+                </div>
+              </article>
+
+            </div>
+        </section>
+
+        <section id="platillos-lista">
+          <div id="platillos-intro">
+            <h2 id="Anticuchos" class="platillos__subtitle">Anticuchos</h2>
+          </div>
+
+          <div class="platillos__grid">
+
+              <!-- SECCIÓN: ANTICUCHOS -->
+              <article class="card">
+                <div class="card__image-wrapper">
+                  <div class="card__image-placeholder">
+                    <img src="images/anticucho.png" alt="Imagen de platillo Anticucho de corazón Clásico"/>
+                  </div>
+                </div>
+                <div class="card__body">
+                  <span class="card__title">Anticucho de corazón Clásico</span>
+                  <p class="card__description"> Corazón de res marinado en ají panca, vinagre y comino. Servido con choclo y papa sancochada. </p>
+                  <p class="card__description"> Precio: S/ 18 </p>
+                </div>
+              </article>
+            
+              <article class="card">
+                <div class="card__image-wrapper">
+                  <div class="card__image-placeholder">
+                    <img src="images/anticucho-mixto.jpg" alt="Imagen de platillo Anticucho mixto"/>
+                  </div>
+                </div>
+                <div class="card__body">
+                  <span class="card__title">Anticucho mixto</span>
+                  <p class="card__description"> Combinación de corazón, pollo y chorizo especial. Acompañado de salsa criolla y ají amarillo. </p>
+                  <p class="card__description"> Precio: S/ 24 </p>
+                </div>
+              </article>
+
+              <article class="card">
+                <div class="card__image-wrapper">
+                  <div class="card__image-placeholder">
+                    <img src="images/anticuchos-de-pollo.webp" alt="Imagen de platillo Anticucho de pollo"/>
+                  </div>
+                </div>
+                <div class="card__body">
+                  <span class="card__title">Anticucho de pollo</span>
+                  <p class="card__description"> Pechuga de pollo en marinada de ají amarillo y limón. Suave, jugoso y muy aromático. </p>
+                  <p class="card__description"> Precio: S/ 16 </p>
+                </div>
+              </article>
+
+            </div>
+        </section>
+
+        <section id="platillos-lista">
+          <div id="platillos-intro">
+            <h2 id="Carnes-a-la-Parrilla" class="platillos__subtitle">Carnes a la Parrilla</h2>
+          </div>
+
+          <div class="platillos__grid">
+
+              <!-- SECCIÓN: CARNES A LA PARRILLA -->
+              <article class="card">
+                <div class="card__image-wrapper">
+                  <div class="card__image-placeholder">
+                    <img src="images/churrasco_de_res.jpeg" alt="Imagen de platillo Churrasco de res"/>
+                  </div>
+                </div>
+                <div class="card__body">
+                  <span class="card__title">Churrasco de res </span>
+                  <p class="card__description"> Corte jugoso de 300 g, a la brasa de carbón. Con papas fritas o arroz y ensalada fresca. </p>
+                  <p class="card__description"> Precio: S/ 38 </p>
+                </div>
+              </article>
+            
+              <article class="card">
+                <div class="card__image-wrapper">
+                  <div class="card__image-placeholder">
+                    <img src="images/filete_mignon.jpg" alt="Imagen de platillo Filete Mignon de Pechuga"/>
+                  </div>
+                </div>
+                <div class="card__body">
+                  <span class="card__title">Filete Mignon de Pechuga</span>
+                  <p class="card__description"> Carne tierna y sabrosa. Se prepara envolviendo pechugas en tiras de tocino y champiñones. </p>
+                  <p class="card__description"> Precio: S/ 40 </p>
+                </div>
+              </article>
+
+              <article class="card">
+                <div class="card__image-wrapper">
+                  <div class="card__image-placeholder">
+                    <img src="images/chuleta_de_cerdo.jpg" alt="Imagen de platillo Chuleta de cerdo"/>
+                  </div>
+                </div>
+                <div class="card__body">
+                  <span class="card__title">Chuleta de cerdo</span>
+                  <p class="card__description"> Chuleta gruesa glaseada en miel de caña y mostaza. Con camote al horno y chimichurri. </p>
+                  <p class="card__description"> Precio: S/ 32 </p>
+                </div>
+              </article>
+
+            </div>
+        </section>
+
+        <section id="platillos-lista">
+          <div id="platillos-intro">
+            <h2 id="Combos" class="platillos__subtitle">Combos</h2>
+          </div>
+
+          <div class="platillos__grid">
+
+              <!-- SECCIÓN: COMBOS -->
+              <article class="card">
+                <div class="card__image-wrapper">
+                  <div class="card__image-placeholder">
+                    <img src="images/combo_personal.webp" alt="Imagen del Combo Personal"/>
+                  </div>
+                </div>
+                <div class="card__body">
+                  <span class="card__title">Combo Personal</span>
+                  <ul>
+                    <li>2 anticuchos de corazón</li>
+                    <li>Choclo y papas</li>
+                    <li>Salsa de la casa</li>
+                    <li>Gaseosa personal</li>
+                  </ul>
+                  <p class="card__description"> Precio: S/ 35 </p>
+                </div>
+              </article>
+            
+              <article class="card">
+                <div class="card__image-wrapper">
+                  <div class="card__image-placeholder">
+                    <img src="images/parrillada_dos.webp" alt="Imagen de Parrilla para dos"/>
+                  </div>
+                </div>
+                <div class="card__body">
+                  <span class="card__title">Parrilla para dos</span>
+                  <ul>
+                    <li>1 churrasco de res</li>
+                    <li>3 anticuchos mixtos</li>
+                    <li>1 guarnición incluida</li>
+                    <li>Gaseosa personal (x2)</li>
+                  </ul>
+                  <p class="card__description"> Precio: S/ 75 </p>
+                </div>
+              </article>
+
+              <article class="card">
+                <div class="card__image-wrapper">
+                  <div class="card__image-placeholder">
+                    <img src="images/combo_familiar.jpg" alt="Imagen de Combo Familiar"/>
+                  </div>
+                </div>
+                <div class="card__body">
+                  <span class="card__title">Combo Familiar</span>
+                  <ul>
+                    <li>6 anticuchos de corazón</li>
+                    <li>2 churrascos de res</li>
+                    <li>1 chuleta de cerdo</li>
+                    <li>1 guarnición incluida</li>
+                    <li>Gaseosa o chicha o limonada 1.5 L</li>
+                  </ul>
+                  <p class="card__description"> Precio: S/ 110 </p>
+                </div>
+              </article>
+
+            </div>
+        </section>
+
+        <section id="platillos-lista">
+          <div id="platillos-intro">
+            <h2 id="Bebidas" class="platillos__subtitle">Bebidas</h2>
+          </div>
+
+          <div class="platillos__grid">
+
+              <!-- SECCIÓN: BEBIDAS -->
+              <article class="card">
+                <div class="card__image-wrapper">
+                  <div class="card__image-placeholder">
+                    <img src="images/chicha_morada.webp" alt="Imagen de Chicha Morada 1L"/>
+                  </div>
+                </div>
+                <div class="card__body">
+                  <span class="card__title"> Chicha morada o Limonada 1L </span>
+                  <p class="card__description"> Precio: S/ 8 </p>
+                </div>
+              </article>
+            
+              <article class="card">
+                <div class="card__image-wrapper">
+                  <div class="card__image-placeholder">
+                    <img src="images/limonada.webp" alt="Imagen de Limonada 1.5L"/>
+                  </div>
+                </div>
+                <div class="card__body">
+                  <span class="card__title"> Chicha morada o Limonada 1.5L </span>
+                  <p class="card__description"> Precio: S/ 11 </p>
+                </div>
+              </article>
+
+              <article class="card">
+                <div class="card__image-wrapper">
+                  <div class="card__image-placeholder">
+                    <img src="images/pisco_sour.jpeg" alt="Imagen de Pisco Sour"/>
+                  </div>
+                </div>
+                <div class="card__body">
+                  <span class="card__title"> Pisco Sour </span>
+                  <p class="card__description"> Precio: S/ 18 </p>
+                </div>
+              </article>
+
+              <article class="card">
+                <div class="card__image-wrapper">
+                  <div class="card__image-placeholder">
+                    <img src="images/inca-kola.webp" alt="Imagen de Gaseosa 1L"/>
+                  </div>
+                </div>
+                <div class="card__body">
+                  <span class="card__title"> Gaseosa 1L </span>
+                  <p class="card__description"> Precio: S/ 14 </p>
+                </div>
+              </article>
+
+              <article class="card">
+                <div class="card__image-wrapper">
+                  <div class="card__image-placeholder">
+                    <img src="images/gaseosa_personal.webp" alt="Imagen de Gaseosa personal"/>
+                  </div>
+                </div>
+                <div class="card__body">
+                  <span class="card__title"> Gaseosa personal </span>
+                  <p class="card__description"> Precio: S/ 5 </p>
+                </div>
+              </article>
+
+              <article class="card">
+                <div class="card__image-wrapper">
+                  <div class="card__image-placeholder">
+                    <img src="images/cerveza_pilsen.jpg" alt="Imagen de Cerveza Pilsen 630ml"/>
+                  </div>
+                </div>
+                <div class="card__body">
+                  <span class="card__title"> Cerveza Pilsen 630ml </span>
+                  <p class="card__description"> Precio: S/ 9 </p>
+                </div>
+              </article>
+
+            </div>
+        </section>
 
       </div>
-      <hr/>
-    </section>
- 
-    <!-- SECCIÓN: ANTICUCHOS -->
-    <section id="anticucho">
-      <h2>Anticuchos</h2>
-      <div id="cards-container">
-
-        <article>
-          <button>
-          <h3>Anticucho de corazón Clásico</h3>
-          <p>Corazón de res marinado en ají panca, vinagre y comino. Servido con choclo y papa sancochada.</p>
-          <p>S/ 18</p>
-          </button>
-        </article>
-  
-        <article>
-          <button>
-          <h3>Anticucho mixto</h3>
-          <p>Combinación de corazón, pollo y chorizo especial. Acompañado de salsa criolla y ají amarillo.</p>
-          <p>S/ 24</p>
-          </button>
-        </article>
-  
-        <article>
-          <button>
-          <h3>Anticucho de pollo</h3>
-          <p>Pechuga de pollo en marinada de ají amarillo y limón. Suave, jugoso y muy aromático.</p>
-          <p>S/ 16</p>
-          </button>
-        </article>
-
-      </div>
-      <hr/>
-    </section>
- 
-    <!-- SECCIÓN: CARNES A LA PARRILLA -->
-    <section id="parrilla">
-      <h2>Carnes a la Parrilla</h2>
-      <div id="cards-container">
- 
-      <article>
-        <button>
-        <h3>Churrasco de res <span>Favorito</span></h3>
-        <p>Corte jugoso de 300 g, a la brasa de carbón. Con papas fritas o arroz y ensalada fresca.</p>
-        <p>S/ 38</p>
-        </button>
-      </article>
- 
-      <article>
-        <button>
-        <h3>Filete Mignon de Pechuga</h3>
-        <p>Carne tierna y sabrosa. Se prepara envolviendo pechugas en tiras de tocino y champiñones.</p>
-        <p>S/ 40</p>
-        </button>
-      </article>
- 
-      <article>
-        <button>
-        <h3>Chuleta de cerdo</h3>
-        <p>Chuleta gruesa glaseada en miel de caña y mostaza. Con camote al horno y chimichurri.</p>
-        <p>S/ 32</p>
-        </button>
-      </article>
- 
-      <article>
-        <button>
-        <h3>Bife de Chorizo Argentino</h3>
-        <p>Carne de chorizo argentiniana, jugosa y sabrosa. Se prepara a la parrilla con hierbas aromáticas.</p>
-        <p>S/ 35</p>
-        </button>
-      </article>
-      <hr/>
-    </section>
- 
-    <!-- SECCIÓN: COMBOS -->
-    <section id="combos">
-      <h2>Combos </h2>
-      <div id="cards-container">
- 
-      <article>
-        <button>
-        <h3>Combo Personal</h3>
-        <ul>
-          <li>2 anticuchos de corazón</li>
-          <li>Choclo y papas</li>
-          <li>Salsa de la casa</li>
-          <li>Gaseosa personal</li>
-        </ul>
-        <p>S/ 35</p>
-        </button>
-      </article>
- 
-      <article>
-        <button>
-        <h3>Parrilla para dos</h3>
-        <ul>
-          <li>1 churrasco de res</li>
-          <li>3 anticuchos mixtos</li>
-          <li>1 guarnición incluida</li>
-          <li>Gaseosa personal (x2)</li>
-        </ul>
-        <p>S/ 75</p>
-        </button>
-      </article>
- 
-      <article>
-        <button>
-        <h3>Combo Familiar</h3>
-        <ul>
-          <li>6 anticuchos de corazón</li>
-          <li>2 churrascos de res</li>
-          <li>1 chuleta de cerdo</li>
-          <li>1 guarnición incluida</li>
-          <li>Gaseosa o chicha o limonada 1.5 L</li>
-        </ul>
-        <p>S/ 110</p>
-        </button>
-      </article>
-      </div>
-      <hr/>
-    </section>
- 
-    <!-- SECCIÓN: BEBIDAS -->
-    <section id="bebidas">
-      <h2>Bebidas</h2>
-      <div id="cards-container">
- 
-      <article>
-        <button>
-        <h3>Chicha morada o Limonada 1L</h3>
-        <p>S/ 8</p>
-        </button>
-      </article>
-
-      <article>
-        <button>
-        <h3>Chicha morada o Limonada 1.5L</h3>
-        <p>S/ 11s</p>
-        </button>
-      </article>
-
-      <article>
-        <button>
-        <h3>Pisco sour</h3>
-        <p>S/ 18</p>
-        </button>
-      </article>
- 
-      <article>
-        <button>
-        <h3>Gaseosa 1.5L</h3>
-        <p>S/ 14</p>
-        </button>
-      </article>
- 
-      <article>
-        <button>
-        <h3>Gaseosa personal</h3>
-        <p>S/ 5</p>
-        </button>
-      </article>
- 
-      <article>
-        <button>
-        <h3>Cerveza Pilsen 630ml</h3>
-        <p>S/ 9</p>
-        </button>
-      </article>
-      </div>
-    </section>
- 
   </main>
 
     <!-- PIE DE PÁGINA -->
     <footer>
-        <hr/>
-        <ul>
+    <div class="footer-about">
+      <nav class="footer-nav contain">
+        <input type="checkbox" id="footer-nav-toggle" class="footer-nav-toggle" />
+        <label for="footer-nav-toggle" class="footer-nav-hamburger" aria-label="Abrir menú del pie de página">
+          <span></span>
+          <span></span>
+          <span></span>
+        </label>
+        <ul class="footer-nav-links">
             <li><a href="nosotros.html">Acerca de nosotros</a></li>
             <li><a href="nosotros.html#contacto">Contáctanos</a></li>
-            <li><a href="https://forms.gle/2TB8Co67aePxxZjV9" target="_blank"><img src="images/complain_book.png" alt="Libro de reclamaciones" width="80px"/></a></li>
+            <li><a href="https://forms.gle/2TB8Co67aePxxZjV9" target="_blank"><img src="images/complain_book.png" alt="Libro de reclamaciones" width="100vw"/></a></li>
         </ul>
-        <p>© 2026 Black Angus House - Todos los derechos reservados</p>
-    </footer>
+      </nav>
+    </div>
+    <p class="copyright">© 2026 Black Angus House - Todos los derechos reservados</p>
+  </footer>
 </body>
 </html>
