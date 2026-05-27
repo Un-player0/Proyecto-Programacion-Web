@@ -27,7 +27,7 @@ body {
     justify-content: space-between;
     overflow: visible;
     background-color: rgb(255, 255, 255);
-    opacity: 1;
+    opacity: 0.7;
     border-bottom-left-radius: 5px;
     border-bottom-right-radius: 5px;
     padding: 0 1.2rem;
@@ -35,14 +35,17 @@ body {
     top: 0;
     align-self: center;
     z-index: 1000;
+    backdrop-filter: blur(-10vw);
     filter: blur(-1vw);
     flex-wrap: wrap;
+    z-index: 100;
 }
 
 .nav-logo {
     display: flex;
     align-items: center;
     padding: 4px 0;
+    margin-right: 2rem;
 }
 
 .nav-logo img {
@@ -77,6 +80,7 @@ body {
     list-style: none;
     margin: 0;
     padding: 0;
+    backdrop-filter: blur(-10vw);
 }
 
 .nav-links a {
@@ -97,7 +101,6 @@ body {
 /* ── BANNER ──────────────────────────────────────────── */
 
 .banner-image {
-    background: image-set(url('images/CarneParrilla.jpg') 1x, url('images/CarneParrilla.jpg') 2x);
     width: 100%;
     min-height: 45vw;
     position: relative;
@@ -105,7 +108,7 @@ body {
 }
 
 .difuminado {
-    background: image-set(url('images\CarneParrilla.jpg') 1x, url('images/CarneParrilla.jpg') 2x);
+    background: image-set(url('../images/CarneParrilla.jpg') 1x, url('../images/CarneParrilla.jpg') 2x);
     position: absolute;
     background-repeat: no-repeat;
     background-size: cover;
@@ -118,7 +121,7 @@ body {
     filter: blur(0.4vw);
     z-index: 1;
 }
- 
+
 .banner-content {
     display: flex;
     flex-direction: column;
@@ -129,7 +132,7 @@ body {
     font: "cormorant garamond", serif;
     z-index: 2;
 }
- 
+
 .banner-content h2 {
     font-size: clamp(1.2rem, 3.5vw, 2.5rem);
     color: white;

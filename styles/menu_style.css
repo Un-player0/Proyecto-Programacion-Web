@@ -1,3 +1,8 @@
+:root{
+  scrollbar-color: #ff6347 #1e1e1e;
+  scroll-behavior: smooth;
+  overflow-x: hidden;
+}
 body {
     background-color: black;
 }
@@ -27,6 +32,7 @@ body {
     display: flex;
     align-items: center;
     padding: 4px 0;
+    margin-right: 2rem;
 }
 
 .nav-logo img {
@@ -79,7 +85,32 @@ body {
 }
 
 /* ── CONTAINERS ─────────────────────────────────────────── */
-
+.menu-navbar {
+  position: sticky;
+  top: 10px;
+    display: flex;
+    justify-content: center;
+    width: 100%;
+    background-color: rgb(64, 15, 14);
+    margin-top: 1.5rem;
+    padding: 0.7rem;
+}
+.menu-navbar .nav-links li a{
+    color: white;
+}
+main{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-self: center;
+    align-items: center;
+    width: 100%;
+}
+.menu-container {
+    display: flex;
+    flex-direction: column;
+    max-width: 800px;
+}
 .container {
     display: flex;
     flex-direction: column;
@@ -343,8 +374,12 @@ body {
     }
 
     /* ── GRID ─────────────────────────────────────────── */
+    .menu-container {
+        max-width: 650px;
+    }
 
     .platillos__grid {
+      max-width: 350px;
         grid-template-columns: 1fr;
         gap: 2rem;
     }
