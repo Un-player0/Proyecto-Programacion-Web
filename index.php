@@ -1,43 +1,48 @@
 <!DOCTYPE html>
 <html lang="es">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Black Angus House | Carnes y Parrilla</title>
-    <link rel="stylesheet" href="styles/index_style.css" />
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Black Angus House | Carnes y Parrilla</title>
+  <link rel="icon" href="images/favicon.png"/>
+  <link rel="stylesheet" href="styles/global.css" />
+  <link rel="stylesheet" href="styles/index_style.css" />
 </head>
 
-<body>
-  <!-- ENCABEZADO -->
+<!-- Toast de Confirmacion de inicio de sesion / registro -->
+<div id="toast" class="toast"></div>
+<script>
+  const params = new URLSearchParams(window.location.search);
+  const toast = document.getElementById("toast");
 
-  <div class="banner-image">
-    <div class="difuminado"></div>
-    <section class="container">
-      <nav class="navbar contain">
-        <a href="index.html" class="nav-logo"><img src="images/logo_dark.png" alt="Black Angus Logo" height="70"/></a>
-        <input type="checkbox" id="nav-toggle" class="nav-toggle" />
-        <label for="nav-toggle" class="nav-hamburger" aria-label="Abrir menú">
-          <span></span>
-          <span></span>
-          <span></span>
-        </label>
-          <ul class="nav-links">
-            <li><a href="menu.html">Menu</a></li>
-            <li><a href="locales.html">Locales</a></li>
-            <li><a href="nosotros.html">Acerca de nosotros</a></li>
-            <li><a href="reservar.html">Realizar una reserva</a></li>
-            <li><a href="login.html">Ingresar</a></li>
-          </ul>
-      </nav>
-    </section>
-    <section class="container banner-content">
-      <h2>¡Disfruta de las mejores carnes y parrillas en tu restaurante favorito!</h2>
-      <button><a href="reservar.html">RESERVAR</a></button>
-    </section>
-  </div>
+  function mostrarToast(texto, tipo) {
+    toast.textContent = texto;
+    toast.className = "toast show " + tipo;
+    setTimeout(() => toast.classList.remove("show"), 4000);
+  }
+
+  if (params.get("registro") === "exito") {
+    mostrarToast("¡Cuenta creada con éxito! Ya iniciaste sesión.", "exito");
+  } else if (params.get("login") === "exito") {
+    mostrarToast("¡Bienvenido de nuevo!", "exito");
+  }
+</script>
+
+<body>
+
+  <?php include("includes/header.php"); ?>
 
   <!-- CONTENIDO PRINCIPAL -->
   <main>
+    <!-- BANNER -->
+    <div class="banner-image">
+      <div class="difuminado"></div>
+      <section class="container banner-content">
+        <h2>¡Disfruta de las mejores carnes y parrillas en tu restaurante favorito!</h2>
+        <button><a href="reservar.php">RESERVAR</a></button>
+      </section>
+    </div>
+
     <!-- RAZON PARA ELEGIR NUESTRO RESTAURANTE -->
     <div class="container about-container">
       <section class="about-info">
@@ -45,7 +50,7 @@
         <section class="about-text">
         <h2>¿Por qué elegir Black Angus House?</h2>
         <p>En Black Angus House, nos enorgullece ofrecer a nuestros clientes una experiencia culinaria excepcional. Nuestra pasión por la calidad y el sabor se refleja en cada plato que servimos.</p><br>
-        <button><a href="reservar.html">Reservar</a></button>
+        <button><a href="reservar.php">Reservar</a></button>
         </section>
       </section>
     </div>
@@ -61,14 +66,14 @@
       <div class="recommendations__grid">
         <article class="card">
           <div class="card__image-wrapper">
-            <a href="menu.html#anticucho">
+            <a href="menu.php#anticucho">
             <div class="card__image-placeholder">
               <img src="images/anticucho.png" alt="Imagen de anticucho"/>
             </div>
             </a>
           </div>
           <div class="card__body">
-            <a href="menu.html#anticucho">
+            <a href="menu.php#anticucho">
             <span class="card__title">Anticucho de corazón Clásico</span>
             </a>
             <p class="card__description"> Corazón de res marinado en ají panca, vinagre y comino. Servido con papa y choclo. </p>
@@ -79,14 +84,14 @@
         <!-- Card 2: Top Sirloin Entree -->
         <article class="card">
           <div class="card__image-wrapper">
-            <a href="menu.html#parrilla">
+            <a href="menu.php#parrilla">
             <div class="card__image-placeholder">
               <img src="images/Bife.jpg" alt="Imagen de bife de chorizo" />
             </div>
             </a>
           </div>
           <div class="card__body">
-            <a href="menu.html#parrilla">
+            <a href="menu.php#parrilla">
             <span class="card__title">Bife de Chorizo Argentino</span>
             </a>
             <p class="card__description"> Incluye porcion de papas fritas </p>
@@ -97,14 +102,14 @@
         <!-- Card 3: Filete Mignon de Pechuga -->
         <article class="card">
           <div class="card__image-wrapper">
-            <a href="menu.html#parrilla">
+            <a href="menu.php#parrilla">
             <div class="card__image-placeholder">
               <img src="images/filete_mignon.jpg" alt="Imagen de filete mignon" />
             </div>
             </a>
           </div>
           <div class="card__body">
-            <a href="menu.html#parrilla">
+            <a href="menu.php#parrilla">
             <span class="card__title">Filete Mignon de Pechuga</span>
             </a>
             <p class="card__description"> Se prepara envolviendo pechugas en tiras de tocino y champiñones</p>
@@ -118,30 +123,13 @@
   <section class="join-us">
         <h2>Descubre nuestros beneficios</h2>
         <p>Se parte de nuestro programa de recompensas y descubre las ofertas que tenemos para ti</p>
-        <button><a href="login.html">Unirse</a></button>
-        <button><a href="socios.html">Conoce más información</a></button>
+        <button><a href="login.php">Unirse</a></button>
+        <button><a href="socios.php">Conoce más información</a></button>
   </div>
   </section>
   </main>
   
-    <!-- PIE DE PÁGINA -->
-  <footer>
-    <div class="footer-about">
-      <nav class="footer-nav contain">
-        <input type="checkbox" id="footer-nav-toggle" class="footer-nav-toggle" />
-        <label for="footer-nav-toggle" class="footer-nav-hamburger" aria-label="Abrir menú del pie de página">
-          <span></span>
-          <span></span>
-          <span></span>
-        </label>
-        <ul class="footer-nav-links">
-            <li><a href="nosotros.html">Acerca de nosotros</a></li>
-            <li><a href="nosotros.html#contacto">Contáctanos</a></li>
-            <li><a href="https://forms.gle/2TB8Co67aePxxZjV9" target="_blank"><img src="images/complain_book.png" alt="Libro de reclamaciones" width="100vw"/></a></li>
-        </ul>
-      </nav>
-    </div>
-    <p class="copyright">© 2026 Black Angus House - Todos los derechos reservados</p>
-  </footer>
+  <?php include("includes/footer.php"); ?>
+
 </body>
 </html>

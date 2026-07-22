@@ -3,40 +3,21 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Black Angus House | Carnes y Parrilla</title>
+  <link rel="icon" href="images/favicon.png"/>
+  <link rel="stylesheet" href="styles/global.css" />
   <link rel="stylesheet" href="styles/menu_style.css" />
   <title>Black Angus House | Carnes y Parrilla</title>
 </head>
 
 <body>
-  <!-- ENCABEZADO -->
-  <header>
-    <div class="navbar-area">
-      <section class="container">
-        <nav class="navbar contain">
-          <a href="index.html" class="nav-logo"><img src="images/logo_dark.png" alt="Black Angus Logo" height="70"/></a>
-          <input type="checkbox" id="nav-toggle" class="nav-toggle" />
-          <label for="nav-toggle" class="nav-hamburger" aria-label="Abrir menú">
-            <span></span>
-            <span></span>
-            <span></span>
-          </label>
-            <ul class="nav-links">
-              <li><a href="menu.html">Menu</a></li>
-              <li><a href="locales.html">Locales</a></li>
-              <li><a href="nosotros.html">Acerca de nosotros</a></li>
-              <li><a href="reservar.html">Realizar una reserva</a></li>
-              <li><a href="login.html">Ingresar</a></li>
-            </ul>
-        </nav>
-      </section>
-    </div>
-  </header>
+  <?php include("includes/header.php"); ?>
 
   <!-- CONTENIDO PRINCIPAL -->
   <main>
     <div class="menu-navbar">
       <ul class="nav-links">
-        <li><a href="menu.html">Volver al menu</a></li>
+        <li><a href="menu.php">Volver al menu</a></li>
       </ul>
     </div>
     <div class="menu-container">
@@ -135,24 +116,6 @@
       </div>
   </main>
 
-    <!-- PIE DE PÁGINA -->
-    <footer>
-    <div class="footer-about">
-      <nav class="footer-nav contain">
-        <input type="checkbox" id="footer-nav-toggle" class="footer-nav-toggle" />
-        <label for="footer-nav-toggle" class="footer-nav-hamburger" aria-label="Abrir menú del pie de página">
-          <span></span>
-          <span></span>
-          <span></span>
-        </label>
-        <ul class="footer-nav-links">
-            <li><a href="nosotros.html">Acerca de nosotros</a></li>
-            <li><a href="nosotros.html#contacto">Contáctanos</a></li>
-            <li><a href="https://forms.gle/2TB8Co67aePxxZjV9" target="_blank"><img src="images/complain_book.png" alt="Libro de reclamaciones" width="100vw"/></a></li>
-        </ul>
-      </nav>
-    </div>
-    <p class="copyright">© 2026 Black Angus House - Todos los derechos reservados</p>
-  </footer>
+  <?php include("includes/footer.php"); ?>
 </body>
 </html>

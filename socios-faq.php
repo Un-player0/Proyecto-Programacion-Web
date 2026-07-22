@@ -6,33 +6,15 @@
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,600;1,400&display=swap" rel="stylesheet">
-  <link rel="stylesheet" href="styles/faq_style.css">
+
   <title>Preguntas Frecuentes - Socios | Black Angus House</title>
+  <link rel="icon" href="images/favicon.png"/>
+  <link rel="stylesheet" href="styles/global.css" />
+  <link rel="stylesheet" href="styles/faq_style.css">
 </head>
+
 <body>
-<!-- ENCABEZADO -->
-  <header>
-    <div class="navbar-area">
-      <section class="container">
-        <nav class="navbar contain">
-          <a href="index.html" class="nav-logo"><img src="images/logo_dark.png" alt="Black Angus Logo" height="70"/></a>
-          <input type="checkbox" id="nav-toggle" class="nav-toggle" />
-          <label for="nav-toggle" class="nav-hamburger" aria-label="Abrir menú">
-            <span></span>
-            <span></span>
-            <span></span>
-          </label>
-            <ul class="nav-links">
-              <li><a href="menu.html">Menu</a></li>
-              <li><a href="locales.html">Locales</a></li>
-              <li><a href="nosotros.html">Acerca de nosotros</a></li>
-              <li><a href="reservar.html">Realizar una reserva</a></li>
-              <li><a href="login.html">Ingresar</a></li>
-            </ul>
-        </nav>
-      </section>
-    </div>
-  </header>
+  <?php include("includes/header.php"); ?>
 
   <main id="main-content">
 
@@ -78,7 +60,7 @@
         </label>
         <div class="faq-answer">
           <div class="faq-answer-inner">
-            Como socio de Black Angus House, disfrutarás de descuentos exclusivos en nuestros platos más populares, promociones especiales durante todo el año, acceso a eventos exclusivos para socios y la oportunidad de acumular puntos por cada compra que realices. Descubre la lista entera de beneficios <a href="socios.html">aquí</a>.
+            Como socio de Black Angus House, disfrutarás de descuentos exclusivos en nuestros platos más populares, promociones especiales durante todo el año, acceso a eventos exclusivos para socios y la oportunidad de acumular puntos por cada compra que realices. Descubre la lista entera de beneficios <a href="socios.php">aquí</a>.
           </div>
         </div>
       </div>
@@ -164,7 +146,7 @@
         </label>
         <div class="faq-answer">
           <div class="faq-answer-inner">
-            Una vez completada tu compra en el local o en línea, los puntos se agregarán a tu cuenta en tiempo real. Si no ves tus puntos reflejados, intenta cerrar sesión y volver a ingresar. Si el problema persiste, contáctanos a través de la sección <a href="nosotros.html#contacto">Contáctanos</a> indicando tu nombre, número de socio y fecha de compra.
+            Una vez completada tu compra en el local o en línea, los puntos se agregarán a tu cuenta en tiempo real. Si no ves tus puntos reflejados, intenta cerrar sesión y volver a ingresar. Si el problema persiste, contáctanos a través de la sección <a href="nosotros.php#contacto">Contáctanos</a> indicando tu nombre, número de socio y fecha de compra.
           </div>
         </div>
       </div>
@@ -173,24 +155,6 @@
 
   </main>
 
-  <!-- PIE DE PÁGINA -->
-  <footer>
-    <div class="footer-about">
-      <nav class="footer-nav contain">
-        <input type="checkbox" id="footer-nav-toggle" class="footer-nav-toggle" />
-        <label for="footer-nav-toggle" class="footer-nav-hamburger" aria-label="Abrir menú del pie de página">
-          <span></span>
-          <span></span>
-          <span></span>
-        </label>
-        <ul class="footer-nav-links">
-            <li><a href="nosotros.html">Acerca de nosotros</a></li>
-            <li><a href="nosotros.html#contacto">Contáctanos</a></li>
-            <li><a href="https://forms.gle/2TB8Co67aePxxZjV9" target="_blank"><img src="images/complain_book.png" alt="Libro de reclamaciones" width="100vw"/></a></li>
-        </ul>
-      </nav>
-    </div>
-    <p class="copyright">© 2026 Black Angus House - Todos los derechos reservados</p>
-  </footer>
+  <?php include("includes/footer.php"); ?>
 </body>
 </html>
